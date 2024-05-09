@@ -4,11 +4,55 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:InputCentar"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Flyout">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+
+    <Shell.FlyoutHeader>
+        <StackLayout Padding="10, 10, 0,10">
+            <Image Source="logo.png" HeightRequest="60" WidthRequest="60" Aspect="AspectFit"/>
+        </StackLayout>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="O NAMA">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+
+    </FlyoutItem>
+
+    <FlyoutItem Title="PROJEKTI">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+
+    </FlyoutItem>
+    <FlyoutItem Title="EDUKACIJE">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+
+    </FlyoutItem>
+
+    <FlyoutItem Title="PRIDRUŽI SE">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+
+    </FlyoutItem>
+
+    <FlyoutItem Title="KONTAKT">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+
+    </FlyoutItem>
+
+    <FlyoutItem Title="EDUKACIJE">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+
+    </FlyoutItem>
+
 
 </Shell>

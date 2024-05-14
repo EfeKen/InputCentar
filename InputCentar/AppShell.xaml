@@ -13,10 +13,16 @@
         </StackLayout>
     </Shell.FlyoutHeader>
 
-    <FlyoutItem Title="O NAMA">
+    <FlyoutItem Title="POČETNA">
         <ShellContent
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage" />
+
+    </FlyoutItem>
+    <FlyoutItem Title="O NAMA">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:Onama}"
+            Route="Onama" />
 
     </FlyoutItem>
 

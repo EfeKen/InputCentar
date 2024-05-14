@@ -3,20 +3,19 @@
     x:Class="InputCentar.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:InputCentar"
-    Shell.FlyoutBehavior="Flyout">
-
+    xmlns:local="clr-namespace:InputCentar">
 
     <Shell.FlyoutHeader>
         <StackLayout Padding="10, 10, 0,10">
-            <Image Source="logo.png" HeightRequest="60" WidthRequest="60" Aspect="AspectFit"/>
+            <Image Source="logo.png" HeightRequest="60" WidthRequest="120" Aspect="AspectFit"/>
         </StackLayout>
     </Shell.FlyoutHeader>
 
-    <FlyoutItem Title="POČETNA">
+
+    <FlyoutItem Title="O NAMA">
         <ShellContent
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
+            ContentTemplate="{DataTemplate local:Onama}"
+            Route="Onama" />
 
     </FlyoutItem>
     <FlyoutItem Title="O NAMA">
@@ -41,15 +40,17 @@
 
     <FlyoutItem Title="PRIDRUŽI SE">
         <ShellContent
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
+            ContentTemplate="{DataTemplate local:PridruziSe}"
+            Route="PridruziSe">
+
+        </ShellContent>
 
     </FlyoutItem>
 
     <FlyoutItem Title="KONTAKT">
         <ShellContent
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
+            ContentTemplate="{DataTemplate local:Kontakt}"
+            Route="Kontakt" />
 
     </FlyoutItem>
 
@@ -59,6 +60,4 @@
             Route="MainPage" />
 
     </FlyoutItem>
-
-
 </Shell>

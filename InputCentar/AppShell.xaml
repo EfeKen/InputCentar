@@ -11,10 +11,11 @@
         </StackLayout>
     </Shell.FlyoutHeader>
 
+
     <FlyoutItem Title="O NAMA">
         <ShellContent
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
+            ContentTemplate="{DataTemplate local:Onama}"
+            Route="Onama" />
 
     </FlyoutItem>
 

@@ -50,12 +50,28 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="Model\" />
 	  <Folder Include="ViewModel\" />
 	  <Folder Include="View\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Kontakt.xaml.cs">
+	    <DependentUpon>Kontakt.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Kontakt.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="PridruziSe.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

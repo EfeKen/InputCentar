@@ -58,4 +58,16 @@
 	  <Folder Include="View\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="Projekti.xaml.cs">
+	    <DependentUpon>Projekti.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Projekti.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

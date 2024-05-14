@@ -22,8 +22,8 @@
 
     <FlyoutItem Title="PROJEKTI">
         <ShellContent
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
+            ContentTemplate="{DataTemplate local:Projekti}"
+            Route="Projekti" />
 
     </FlyoutItem>
     <FlyoutItem Title="EDUKACIJE">

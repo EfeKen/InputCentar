@@ -34,8 +34,10 @@
 
     <FlyoutItem Title="PRIDRUŽI SE">
         <ShellContent
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
+            ContentTemplate="{DataTemplate local:PridruziSe}"
+            Route="PridruziSe">
+
+        </ShellContent>
 
     </FlyoutItem>
 

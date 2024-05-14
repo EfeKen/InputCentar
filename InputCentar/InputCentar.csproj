@@ -58,4 +58,10 @@
 	  <Folder Include="View\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <MauiXaml Update="PridruziSe.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

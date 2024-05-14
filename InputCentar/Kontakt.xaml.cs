@@ -1,9 +1,10 @@
 namespace InputCentar;
 
-public partial class NewPage1 : ContentPage
+public partial class Kontakt : ContentPage
 {
-	public NewPage1()
-	{
-		InitializeComponent();
-	}
+	public Kontakt()
+    {
+        InitializeComponent();
+
+    }
 }

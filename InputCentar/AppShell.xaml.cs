@@ -1,4 +1,6 @@
-﻿namespace InputCentar
+﻿using Microsoft.Maui.Controls;
+
+namespace InputCentar
 {
     public partial class AppShell : Shell
     {
@@ -6,5 +8,6 @@
         {
             InitializeComponent();
         }
+
     }
 }

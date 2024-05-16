@@ -5,10 +5,10 @@
              Title="Pridruzi se">
     <ScrollView>
         <StackLayout>
-            <Button Text="Volontiraj" Clicked="Page1Button_Clicked" />
-            <Button Text="Praksa" Clicked="Page2Button_Clicked" />
-            <Button Text="Upit" Clicked="Page3Button_Clicked" />
-            <Button Text="Doniraj" Clicked="Page4Button_Clicked"/>
+            <Button Text="Volontiraj" Clicked="Page1Button_Clicked" Padding="10" Margin="10"/>
+            <Button Text="Praksa" Clicked="Page2Button_Clicked" Padding="10" Margin="10"/>
+            <Button Text="Upit" Clicked="Page3Button_Clicked" Padding="10" Margin="10"/>
+            <Button Text="Doniraj" Clicked="Page4Button_Clicked" Padding="10" Margin="10"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

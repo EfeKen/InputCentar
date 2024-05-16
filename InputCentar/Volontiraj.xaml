@@ -6,7 +6,7 @@
     <ScrollView>
         <VerticalStackLayout>
             <Label 
-            Text="Volontiraj i ti"
+            Text="Volontiraj i ti!"
             FontAttributes="Bold"
             FontSize="24"
             Padding="20"

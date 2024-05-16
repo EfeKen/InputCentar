@@ -50,5 +50,11 @@
             Route="Kontakt" />
 
     </FlyoutItem>
+    <FlyoutItem Title="KONTAKT">
+        <ShellContent
+        ContentTemplate="{DataTemplate local:Rezervacije}"
+        Route="Kontakt" />
+
+    </FlyoutItem>
 
 </Shell>

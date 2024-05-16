@@ -3,10 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InputCentar.PridruziSe"
              Title="Pridruzi se">
-    <VerticalStackLayout>
-        <Label 
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label 
             Text="Volontiraj i ti"
+            FontAttributes="Bold"
+            FontSize="24"
+            Padding="20"
             VerticalOptions="Center" 
             HorizontalOptions="Start" />
-    </VerticalStackLayout>
+            <Label
+            Text="Želiš li doprinijeti zajednici na pozitivan način? Razmišljaš li o tome kako možeš koristiti svoje slobodno vrijeme na koristan i značajan način? Volontiranje može biti pravi put za tebe!"
+                Padding="20"
+            />
+            <Label
+                Text="Volontiranje je čin dobrote i solidarnosti prema drugima, gdje svoje vrijeme i trud nesebično dajemo radi unaprjeđenja zajednice i poboljšanja života drugih ljudi. Bez obzira na to želiš li pomoći u socijalnim programima, edukaciji, zaštiti okoliša ili bilo kojem drugom području, volontiranje pruža priliku za osobni rast i razvoj."
+                Padding="20"
+                />
+            <Label
+                Text="Centar za mlade INPUT otvara vrata svima koji žele biti dio pozitivnih promjena. Naša zajednica volontera već broji oko 50 mladih entuzijasta koji se redovito okupljaju u našem centru. Tamo razgovaramo o budućim projektima, događajima i aktivnostima koje planiramo provesti. Kroz volontiranje u našem centru, imaš priliku stjecati nova znanja i vještine, upoznati nove ljude te doprinijeti boljem okruženju za sve nas."
+                Padding="20"
+                />
+            <Label
+                Text="Naša baza podataka već sadrži više od 400 imena mladih ljudi koji su svojim angažmanom u našim aktivnostima pokazali veliku predanost i volju za promjenama. Njihov trud prepoznali su i drugi, pa su često pozivani da sudjeluju u projektima drugih nevladinih organizacija."
+                Padding="20"
+                />
+            <Label
+                Text="Želiš li se pridružiti našem timu? Pridruži nam se i ti, iskoristi svoje vrijeme na kvalitetan način i postani dio pozitivnih promjena u zajednici. Volontiraj i TI!"
+                Padding="20"
+                />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

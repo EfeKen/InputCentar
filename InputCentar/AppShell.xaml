@@ -51,10 +51,4 @@
 
     </FlyoutItem>
 
-    <FlyoutItem Title="EDUKACIJE">
-        <ShellContent
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
-
-    </FlyoutItem>
 </Shell>

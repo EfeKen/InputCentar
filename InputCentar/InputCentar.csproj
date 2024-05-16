@@ -56,7 +56,13 @@
 	<ItemGroup>
 	  <Folder Include="Model\" />
 	  <Folder Include="ViewModel\" />
-	  <Folder Include="View\" />
+	  <Folder Include="view\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Onama.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 	<ItemGroup>

@@ -5,10 +5,10 @@
 
     <ScrollView>
         <Grid>
-         
+            <!-- Image container -->
             <Image x:Name="mainImage" Source="image1.png" Aspect="AspectFill" VerticalOptions="Start" HeightRequest="500"/>
 
-         
+            <!-- Text overlay -->
             <StackLayout VerticalOptions="Start" HorizontalOptions="Start" Margin="20">
                 <Label Text="Lorem Ipsum" FontSize="24" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Start" TextColor="White"/>
                

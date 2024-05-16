@@ -21,12 +21,6 @@
             Route="Onama" />
 
     </FlyoutItem>
-    <FlyoutItem Title="O NAMA">
-        <ShellContent
-            ContentTemplate="{DataTemplate local:Onama}"
-            Route="Onama" />
-
-    </FlyoutItem>
 
     <FlyoutItem Title="PROJEKTI">
         <ShellContent

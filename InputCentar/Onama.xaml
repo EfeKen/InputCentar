@@ -2,34 +2,63 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InputCentar.Onama"
-             Title="Onama">
-    <StackLayout>
-        <!-- Your about page content here -->
-        <Label Text="O NAMA
+             Title="O NAMA">
+    <ScrollView>
+        <StackLayout Padding="20">
 
-U srcu Zenice, od osnivanja 2008. godine, Centar za mlade INPUT stoji kao svjetionik nade i mogućnosti za sve mlade ljude. Naša posvećenost edukaciji, aktivizmu i zagovaranju za prava mladih prožima sve aspekte našeg rada, težimo stvaranju inkluzivnog i poticajnog okruženja za sve mlade u Zenici, ZDK-u i širom Bosne i Hercegovine.
-
-VIZIJA
-Mladi u INPUT
-Je jednostavna, ali moćna – pružiti mladima priliku da steknu nova znanja, da ih dijele s drugima i da im budemo podrška i “vjetar u leđa” dok kroče putem prema budućnosti. Učimo ih da se osnaže, da se angažiraju u svojim zajednicama i da prepoznaju svoju ulogu u oblikovanju boljeg sutra.
-
-MISIJA
-grupna slika ispred INPUT centra za mlade Zenica
-Težimo omogućiti mladima dostojanstven život budućnosti. To znači pružiti im kvalitetno neformalno obrazovanje koje će im otvoriti vrata ka svijetu mogućnosti, osigurati im prava na sve društvene tokove i podržati ih u njihovim ambicijama i snovima.
-
-VISE O NAMA
-Jedan od naših ključnih fokusa je podrška mladima u učenju iz oblasti IT i STEM-a (Naukom, Tehnologijom, Inženjerstom i Matematikom). Svesrdno podržavamo njihovu želju za napretkom i usvajanjem novih tehnologija, jer vjerujemo da je upravo u tim poljima ključ za budući uspjeh.
- 
-
-Volonterizam je srž naše organizacije. Kroz volonterske projekte, mladi imaju priliku ne samo da doprinesu zajednici, već i da razvijaju svoje vještine, grade samopouzdanje i stvaraju veze s drugima. Svaki angažman u zajednici donosi ne samo korist za druge, već i osobni rast i zadovoljstvo.
- 
-
-Omladinski aktivizam je još jedan stub našeg djelovanja. Podstičemo mlade da se zauzmu za svoje ideje, da se bore za pravdu i da aktivno sudjeluju u kreiranju promjena u društvu. Vjerujemo da svaki glas mladih ima snagu da pokrene pozitivne transformacije.
- 
-
-Naš rad nije samo o stvaranju novih mogućnosti za mlade, već i o podršci u njihovom putovanju prema zapošljavanju i karijernom razvoju. Kroz mentorstvo, savjetovanje i razne obuke, pripremamo ih za izazove koji ih čekaju na tržištu rada i pomažemo im da ostvare svoje profesionalne ambicije.
- 
-
-U Centru za mlade INPUT, svaki mladi čovjek je važan, svaka ideja ima potencijal, a svaka akcija može promijeniti svijet na bolje. Zajedno gradimo bolju budućnost za sve nas." FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="End"/>
-    </StackLayout>
+            <Image Source="onama1.jpg"
+               Aspect="AspectFit"/>
+            <Label Text="U srcu Zenice, od osnivanja 2008. godine, Centar za mlade INPUT stoji kao svjetionik nade i mogućnosti za sve mlade ljude. Naša posvećenost edukaciji, aktivizmu i zagovaranju za prava mladih prožima sve aspekte našeg rada, težimo stvaranju inkluzivnog i poticajnog okruženja za sve mlade u Zenici, ZDK-u i širom Bosne i Hercegovine."
+               FontSize="16"
+               Margin="0,20,0,10"
+               LineBreakMode="WordWrap"/>
+            <Label Text="VIZIJA" Margin="10"
+               FontSize="20"
+               FontAttributes="Bold"/>
+            <Image Source="onama2.jpg"
+                   Aspect="AspectFit"/>
+            <Label Text="Je jednostavna, ali moćna – pružiti mladima priliku da steknu nova znanja, da ih dijele s drugima i da im budemo podrška i “vjetar u leđa” dok kroče putem prema budućnosti. Učimo ih da se osnaže, da se angažiraju u svojim zajednicama i da prepoznaju svoju ulogu u oblikovanju boljeg sutra."
+               FontSize="16"
+               Margin="0,20,0,10"
+               LineBreakMode="WordWrap"/>
+            <Label Text="MISIJA"
+               Margin="10"
+               FontSize="20"
+               FontAttributes="Bold"/>
+            <Image Source="onama3.jpg"
+               Aspect="AspectFit"/>
+            <Label Text="Težimo omogućiti mladima dostojanstven život budućnosti. To znači pružiti im kvalitetno neformalno obrazovanje koje će im otvoriti vrata ka svijetu mogućnosti, osigurati im prava na sve društvene tokove i podržati ih u njihovim ambicijama i snovima."
+               FontSize="16"
+               Margin="0,20,0,10"
+               LineBreakMode="WordWrap"/>
+            <Label Text="VIŠE O NAMA"
+                   Margin="10"
+               FontSize="20"
+               FontAttributes="Bold"/>
+            <Label Text="• Jedan od naših ključnih fokusa je podrška mladima u učenju iz oblasti IT i STEM-a (Naukom, Tehnologijom, Inženjerstom i Matematikom). Svesrdno podržavamo njihovu želju za napretkom i usvajanjem novih tehnologija, jer vjerujemo da je upravo u tim poljima ključ za budući uspjeh."
+               FontSize="16"
+               Margin="0,20,0,10"
+               LineBreakMode="WordWrap"/>
+            <Label Text="• Volonterizam je srž naše organizacije. Kroz volonterske projekte, mladi imaju priliku ne samo da doprinesu zajednici, već i da razvijaju svoje vještine, grade samopouzdanje i stvaraju veze s drugima. Svaki angažman u zajednici donosi ne samo korist za druge, već i osobni rast i zadovoljstvo."
+               FontSize="16"
+               Margin="0,20,0,10"
+               LineBreakMode="WordWrap"/>
+            <Label Text="• Omladinski aktivizam je još jedan stub našeg djelovanja. Podstičemo mlade da se zauzmu za svoje ideje, da se bore za pravdu i da aktivno sudjeluju u kreiranju promjena u društvu. Vjerujemo da svaki glas mladih ima snagu da pokrene pozitivne transformacije."
+               FontSize="16"
+               Margin="0,20,0,10"
+               LineBreakMode="WordWrap"/>
+            <Label Text="• Naš rad nije samo o stvaranju novih mogućnosti za mlade, već i o podršci u njihovom putovanju prema zapošljavanju i karijernom razvoju. Kroz mentorstvo, savjetovanje i razne obuke, pripremamo ih za izazove koji ih čekaju na tržištu rada i pomažemo im da ostvare svoje profesionalne ambicije."
+               FontSize="16"
+               Margin="0,20,0,10"
+               LineBreakMode="WordWrap"/>
+            <Label Text="• U Centru za mlade INPUT, svaki mladi čovjek je važan, svaka ideja ima potencijal, a svaka akcija može promijeniti svijet na bolje. Zajedno gradimo bolju budućnost za sve nas."
+               FontSize="16"
+               Margin="0,20,0,10"
+               LineBreakMode="WordWrap"/>
+            <Image Source="logo.png"
+                   Aspect="AspectFit"
+                   HeightRequest="50"
+                   HorizontalOptions="Center"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

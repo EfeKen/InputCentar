@@ -3,10 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InputCentar.PridruziSe"
              Title="Pridruzi se">
-    <VerticalStackLayout>
-        <Label 
-            Text="Volontiraj i ti"
-            VerticalOptions="Center" 
-            HorizontalOptions="Start" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <StackLayout>
+            <Button Text="Volontiraj" Clicked="Page1Button_Clicked" />
+            <Button Text="Praksa" Clicked="Page2Button_Clicked" />
+            <Button Text="Upit" Clicked="Page3Button_Clicked" />
+            <Button Text="Doniraj" Clicked="Page4Button_Clicked"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

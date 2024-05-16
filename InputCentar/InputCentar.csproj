@@ -60,6 +60,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="AktivniProjekti.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Onama.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

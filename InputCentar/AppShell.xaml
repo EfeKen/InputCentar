@@ -3,58 +3,41 @@
     x:Class="InputCentar.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:InputCentar">
+    xmlns:local="clr-namespace:InputCentar"
+    xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"    
+    BackgroundColor="White">
+    
+    <Shell.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
-    <Shell.FlyoutHeader>
-        <StackLayout Padding="10, 10, 0, 10">
-            <Image Source="logo.png" HeightRequest="60" WidthRequest="120" Aspect="AspectFit">
+            <Image Source="logo.png" HeightRequest="60" WidthRequest="100" Aspect="AspectFit" Margin="5" HorizontalOptions="End">
                 <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding NavigateToMainPageCommand}" />
+                    <TapGestureRecognizer Command="{Binding Source={x:Reference MainPage}, Path=BindingContext.GoToMainPageCommand}" />
                 </Image.GestureRecognizers>
             </Image>
-        </StackLayout>
-    </Shell.FlyoutHeader>
+        </Grid>
+    </Shell.TitleView>
 
-    <FlyoutItem Title="O NAMA">
-        <ShellContent
-            ContentTemplate="{DataTemplate local:Onama}"
-            Route="Onama" />
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <StackLayout Padding="10, 10, 0, 10">
+                <Image Source="logo.png" HeightRequest="60" WidthRequest="120" Aspect="AspectFit">
+                </Image>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
 
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="POČETNA" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        <ShellContent Title="O NAMA" ContentTemplate="{DataTemplate local:Onama}" Route="Onama"/>
+        <ShellContent Title="PROJEKTI" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        <ShellContent Title="EDUKACIJE" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        <ShellContent Title="PRIDRUŽI SE" ContentTemplate="{DataTemplate local:PridruziSe}" Route="PridruziSe"/>
+        <ShellContent Title="KONTAKT" ContentTemplate="{DataTemplate local:Kontakt}" Route="Kontakt"/>
     </FlyoutItem>
-    <FlyoutItem Title="O NAMA">
-        <ShellContent
-            ContentTemplate="{DataTemplate local:Onama}"
-            Route="Onama" />
-
-    </FlyoutItem>
-
-    <FlyoutItem Title="PROJEKTI">
-        <ShellContent
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
-
-    </FlyoutItem>
-    <FlyoutItem Title="EDUKACIJE">
-        <ShellContent
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
-
-    </FlyoutItem>
-
-    <FlyoutItem Title="PRIDRUŽI SE">
-        <ShellContent
-            ContentTemplate="{DataTemplate local:PridruziSe}"
-            Route="PridruziSe">
-
-        </ShellContent>
-
-    </FlyoutItem>
-
-    <FlyoutItem Title="KONTAKT">
-        <ShellContent
-            ContentTemplate="{DataTemplate local:Kontakt}"
-            Route="Kontakt" />
-
-    </FlyoutItem>
-
+    
 </Shell>

@@ -32,6 +32,10 @@
                 Text="Želiš li se pridružiti našem timu? Pridruži nam se i ti, iskoristi svoje vrijeme na kvalitetan način i postani dio pozitivnih promjena u zajednici. Volontiraj i TI!"
                 Padding="20"
                 />
+            <Image Source="logo.png"
+                   Aspect="AspectFit"
+                   HeightRequest="50"
+                   HorizontalOptions="Center"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

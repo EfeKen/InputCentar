@@ -20,6 +20,10 @@
             <Label
                 Text="Ako želite obaviti praksu i razvijati svoje vještine u stimulativnom okruženju, posjetite Centar za mlade INPUT u Zenici i postanite dio našeg tima. Vaša budućnost počinje ovdje!"
                 Padding="16"/>
+            <Image Source="logo.png"
+                   Aspect="AspectFit"
+                   HeightRequest="50"
+                   HorizontalOptions="Center"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

@@ -16,7 +16,7 @@
                 Text="Dragi prijatelji,"
                 Padding="16"/>
             <Label
-                Text="Sa zadovoljstvom želimo da vas upoznamo sa našom organizacijom – Centar za mlade IINPUT. Već punih 16 godina, mi smo posvećeni poticanju i edukaciji mladih ka razvoju njihovih vještina i karijere. Naša misija nije samo pružiti podršku mladima, već i doprinijeti zajednici u kojoj djelujemo."
+                Text="Sa zadovoljstvom želimo da vas upoznamo sa našom organizacijom – Centar za mlade INPUT. Već punih 16 godina, mi smo posvećeni poticanju i edukaciji mladih ka razvoju njihovih vještina i karijere. Naša misija nije samo pružiti podršku mladima, već i doprinijeti zajednici u kojoj djelujemo."
                 Padding="16"/>
             <Label
                 Text="Kroz godine, realizirali smo mnoge aktivnosti i projekte koji su imali pozitivan uticaj na mlade i zajednicu u cjelini. Kroz naše programe, mladi su stekli nove vještine, proširili svoje vidike i stvorili osnovu za uspješnu karijeru. Neki od naših projekata uključuju edukativne radionice, mentorske programe, volonterske akcije, kulturne događaje i još mnogo toga."
@@ -30,6 +30,35 @@
             <Label
                 Text="Hvala vam na podršci i vjerujemo da zajedno možemo ostvariti pozitivne promjene."
                 Padding="16"/>
+            <Label
+                Text="S poštovanjem, Centar za mlade INPUT"
+                Padding="16"/>
+            <Label Text="ZA DONACIJE IZ BOSNE I HERCEGOVINE:"
+                   FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="Primaoc: Centar za mlade INPUT" HorizontalOptions="CenterAndExpand" />
+            <Label Text="Adresa: Prvomajska bb, 72 000 Zenica" HorizontalOptions="CenterAndExpand" />
+            <Label Text="Broj žiroračuna: 161 055 001 207 0033" HorizontalOptions="CenterAndExpand" />
+
+            <Label Text=""/>
+
+            <Label Text="ZA DONACIJE IZ INOSTRANSTVA:"
+                   FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="Primaoc: Centar za mlade INPUT" HorizontalOptions="CenterAndExpand" />
+            <Label Text="Adresa: Prvomajska bb, 72 000 Zenica" HorizontalOptions="CenterAndExpand" />
+            <Label Text="SWIFT/BIC CODE:" HorizontalOptions="CenterAndExpand" />
+            <Label Text="ACCOUNT IBAN:" HorizontalOptions="CenterAndExpand" />
+
+            <Label Text=""/>
+
+            <Label Text="Naziv banke: ,Raiffeisen Bank d.d. Bosna i Hercegovina" HorizontalOptions="CenterAndExpand" />
+            <Label Text="Adresa: Marsala Tita bb, 72 000 Zenica" HorizontalOptions="CenterAndExpand" />
+            <Image Source="logo.png"
+                   Aspect="AspectFit"
+                   HeightRequest="50"
+                   HorizontalOptions="Center"
+                   Margin="20"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

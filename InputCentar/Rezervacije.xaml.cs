@@ -17,6 +17,8 @@ namespace InputCentar
                 new SegmentItem { IconSource = "office.png", Title = "Kancelarije" },
                 new SegmentItem { IconSource = "creativity.png", Title = "Kreativnost" },
                   new SegmentItem { IconSource = "cpu.png", Title = "Elektronika" },
+
+                  new SegmentItem { IconSource = "book.png", Title = "Materijali" },
                 // Add more segment items as needed
             };
 

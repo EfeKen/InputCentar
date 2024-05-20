@@ -52,7 +52,9 @@
 	  <None Remove="Resources\Images\book.png" />
 	  <None Remove="Resources\Images\cpu.png" />
 	  <None Remove="Resources\Images\creativity.png" />
+	  <None Remove="Resources\Images\it.png" />
 	  <None Remove="Resources\Images\office.png" />
+	  <None Remove="Resources\Images\stem.png" />
 	</ItemGroup>
 
 	<ItemGroup>

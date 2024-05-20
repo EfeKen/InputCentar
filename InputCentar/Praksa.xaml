@@ -3,10 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InputCentar.Praksa"
              Title="Praksa">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label 
+            Text="Centar za mlade INPUT u Zenici već nekoliko godina pruža izvanrednu priliku mladim ljudima da steknu praktično iskustvo i obave praksu u sklopu svojih fakultetskih obaveza. Kroz raznovrsne aktivnosti i projekte, omogućujemo studentima da razvijaju svoje kompetencije i sposobnosti u realnom radnom okruženju."
+            Padding="16"/>
+            <Label
+                Text="Naš centar do sada je bio domaćin studentima različitih fakulteta, uključujući Politehnički fakultet UNZE s odsjecima Softversko inžinjerstvo i Proizvodni biznis, Filozofski fakultet UNZE te Sveučilište u Vitezu. Kroz naš program prakse, studenti imaju priliku da primijene teorijsko znanje stečeno na fakultetu u praksi, steknu nova znanja i vještine te izgrade svoju profesionalnu karijeru."
+                Padding="16"/>
+            <Label 
+            Text="Rad u Centru za mlade INPUT nije samo prilika za stjecanje praktičnog iskustva, već i za osobni razvoj. Naš tim mentora pruža podršku i usmjeravanje kako bi svaki praktikant maksimalno iskoristio svoje vrijeme kod nas."
+            Padding="16"/>
+            <Label
+                Text="Zahvaljujući suradnji s različitim fakultetima, možemo ponuditi raznovrsne projekte i aktivnosti kroz koje studenti mogu steći iskustvo u područjima koja ih zanimaju i koja su relevantna za njihovu buduću karijeru."
+                Padding="16"/>
+            <Label
+                Text="Ako želite obaviti praksu i razvijati svoje vještine u stimulativnom okruženju, posjetite Centar za mlade INPUT u Zenici i postanite dio našeg tima. Vaša budućnost počinje ovdje!"
+                Padding="16"/>
+            <Image Source="logo.png"
+                   Aspect="AspectFit"
+                   HeightRequest="50"
+                   HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

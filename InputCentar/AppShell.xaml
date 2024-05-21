@@ -13,20 +13,6 @@
         </StackLayout>
     </Shell.FlyoutHeader>
 
-    <Shell.FlyoutFooterTemplate>
-        <DataTemplate>
-            <StackLayout 
-                         Orientation="Horizontal" 
-                         HorizontalOptions="Center"
-                         VerticalOptions="Center"
-                         
-                         Spacing="30">
-
-                <Button Text="Login" WidthRequest="100" Clicked="LoginButton_Clicked"/>
-                <Button Text="Register" WidthRequest="100" Clicked="RegisterButton_Clicked"/>
-            </StackLayout>
-        </DataTemplate>
-    </Shell.FlyoutFooterTemplate>
 
    <FlyoutItem Title="POČETNA">
        <ShellContent

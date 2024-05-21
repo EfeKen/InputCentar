@@ -1,30 +1,82 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:inputCentar="clr-namespace:InputCentar"
              x:Class="InputCentar.Edukacije"
              Title="Edukacije">
+
+    <Shell.TitleView>
+        <inputCentar:LogoTileView/>
+    </Shell.TitleView>
+
     <ScrollView>
         <StackLayout Padding="20">
 
             <StackLayout>
-                <ImageButton Source="edukacija1.jpg"
+                <ImageButton Source="edukacija1.jpg" 
                      Clicked="ImageButton_Clicked"/>
+                <Label Text="Web Development" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Label_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
             </StackLayout>
-            <Image Source="edukacija2.jpg"
-               Aspect="AspectFit"/>
-            <Image Source="edukacija3.jpg"
-               Aspect="AspectFit"/>
-            <Image Source="edukacija4.jpg"
-               Aspect="AspectFit"/>
-            <Image Source="edukacija5.jpg"
-               Aspect="AspectFit"/>
-            <Image Source="edukacija6.jpg"
-               Aspect="AspectFit"/>
-            
-            <Image Source="logo.png"
+            <StackLayout>
+                <ImageButton Source="edukacija2.jpg" 
+                     Clicked="ImageButton_Clicked"/>
+                <Label Text="3D modeling" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Label_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout>
+                <ImageButton Source="edukacija3.jpg" 
+                     Clicked="ImageButton_Clicked"/>
+                <Label Text="Scratch za djecu" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Label_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout>
+                <ImageButton Source="edukacija4.jpg" 
+                     Clicked="ImageButton_Clicked"/>
+                <Label Text="Poduzetništvo" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Label_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout>
+                <ImageButton Source="edukacija5.jpg" 
+                     Clicked="ImageButton_Clicked"/>
+                <Label Text="Python" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Label_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout>
+                <ImageButton Source="edukacija6.jpg" 
+                     Clicked="ImageButton_Clicked"/>
+                <Label Text="STEM radionice" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Label_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout>
+                <Image Source="logo.png"
                    Aspect="AspectFit"
                    HeightRequest="50"
                    HorizontalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
+                <ImageButton Source="fbicon.png" WidthRequest="56" HeightRequest="60" Clicked="FacebookButton_Clicked" Margin="10"/>
+                <ImageButton Source="igicon.png" WidthRequest="50" HeightRequest="50" Clicked="InstagramButton_Clicked" Margin="10"/>
+                <ImageButton Source="lnicon.png" WidthRequest="49" HeightRequest="50" Clicked="LinkedInButton_Clicked" Margin="10"/>
+            </StackLayout>
         </StackLayout>
     </ScrollView>
 </ContentPage>

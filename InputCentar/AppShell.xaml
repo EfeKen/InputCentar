@@ -30,8 +30,8 @@
     </FlyoutItem>
     <FlyoutItem Title="EDUKACIJE">
         <ShellContent
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
+            ContentTemplate="{DataTemplate local:Edukacije}"
+            Route="Edukacije" />
 
     </FlyoutItem>
 

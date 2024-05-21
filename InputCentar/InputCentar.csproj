@@ -49,12 +49,17 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\adresa.png" />
 	  <None Remove="Resources\Images\book.png" />
 	  <None Remove="Resources\Images\cpu.png" />
 	  <None Remove="Resources\Images\creativity.png" />
+	  <None Remove="Resources\Images\footer.png" />
 	  <None Remove="Resources\Images\it.png" />
+	  <None Remove="Resources\Images\mail.png" />
+	  <None Remove="Resources\Images\mapa.png" />
 	  <None Remove="Resources\Images\office.png" />
 	  <None Remove="Resources\Images\stem.png" />
+	  <None Remove="Resources\Images\telefon.png" />
 	</ItemGroup>
 
 	<ItemGroup>

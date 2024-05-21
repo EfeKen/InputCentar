@@ -16,7 +16,8 @@
 
    <FlyoutItem Title="POČETNA">
        <ShellContent
-           ContentTemplate="{DataTemplate local:MainPage}"/>
+           ContentTemplate="{DataTemplate local:MainPage}"
+           Route="MainPage"/>
    </FlyoutItem>
 
     <FlyoutItem Title="O NAMA">
@@ -28,8 +29,8 @@
 
     <FlyoutItem Title="EDUKACIJE">
         <ShellContent
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage"
+            ContentTemplate="{DataTemplate local:Edukacije}"
+            Route="Edukacije"
             />
     </FlyoutItem>
 
@@ -43,7 +44,7 @@
     <FlyoutItem Title="REZERVIŠI">
         <ShellContent
         ContentTemplate="{DataTemplate local:Rezervacije}"
-        Route="Kontakt" />
+        Route="Rezervisi" />
 
     </FlyoutItem>
 
@@ -53,4 +54,5 @@
             Route="Kontakt" />
     </FlyoutItem>
 
+    
 </Shell>

@@ -86,6 +86,9 @@
 	  <MauiXaml Update="Edukacije.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="NewsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Onama.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

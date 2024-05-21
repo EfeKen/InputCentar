@@ -15,35 +15,38 @@
 
     <ScrollView>
         <StackLayout>
-            <!-- Existing Image and Text Overlay -->
             <Grid>
-                <!-- Image container -->
-                <Image x:Name="mainImage" Source="image1.png" Aspect="AspectFill" VerticalOptions="Start" HeightRequest="500"/>
-
-                <!-- Text overlay -->
-                <StackLayout VerticalOptions="Start" HorizontalOptions="Start" Margin="20">
-                    <Label Text="Lorem Ipsum" FontSize="24" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Start" TextColor="White"/>
-                    <Label Text="Hvala Belminu Skulju prije svega. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet." Margin="0,10,0,0" HorizontalOptions="Start" VerticalOptions="Start" TextColor="White" FontAttributes="Bold"/>
-                    <Label Text="Aenean massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." Margin="0,10,0,0" HorizontalOptions="Start" VerticalOptions="Start" TextColor="White" FontAttributes="Bold"/>
-                </StackLayout>
+                <Image x:Name="mainImage" Source="image1.jpg" Aspect="AspectFill" VerticalOptions="Start" HeightRequest="300"/>
+                <Label Text="INPUT Centar" 
+                       FontSize="30" FontAttributes="Bold" 
+                       FontFamily="Arial"
+                       HorizontalOptions="Start" VerticalOptions="Start" 
+                       TextColor="White"
+                       Margin="10"/>
             </Grid>
+           <ScrollView>
+               <StackLayout Padding="20">
+                   <ListView ItemsSource="{Binding NewsItems}" HasUnevenRows="True">
+                       <ListView.ItemTemplate>
+                           <DataTemplate>
+                               <ViewCell>
+                                   <StackLayout Padding="10">
+                                       <Image Source="{Binding ImageUrl}" HeightRequest="200" Aspect="AspectFill"/>
+                                        <Label Text="{Binding Title}" FontSize="20" FontAttributes="Bold">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding BindingContext.NewsTappedCommand, Source={x:Reference MainPage}}" CommandParameter="{Binding .}" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                        <Label Text="{Binding Description}" FontSize="15"/>
+                                       <Label Text="{Binding Date}" FontSize="12" TextColor="BlueViolet"/>
+                                    </StackLayout>
+                               </ViewCell>
+                           </DataTemplate>
+                       </ListView.ItemTemplate> 
+                   </ListView>
+               </StackLayout>
+           </ScrollView>
 
-            <!-- News Slideshow -->
-            <CarouselView ItemsSource="{Binding NewsItems}" HeightRequest="300" Margin="0,20,0,0">
-                <CarouselView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Image Source="{Binding ImageUrl}" Aspect="AspectFit" VerticalOptions="Start" HeightRequest="300"/>
-                            <!-- Text overlay -->
-                            <StackLayout VerticalOptions="End" HorizontalOptions="Start" Margin="20" BackgroundColor="Black" Opacity="0.6">
-                                <Label Text="{Binding Title}" FontSize="24" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Start" TextColor="Green"/>
-                                <Label Text="{Binding Description}" Margin="0,10,0,0" HorizontalOptions="Start" VerticalOptions="Start" TextColor="White" FontAttributes="Bold"/>
-                                <Label Text="{Binding Date}" Margin="0,10,0,0" HorizontalOptions="Start" VerticalOptions="Start" TextColor="White" FontAttributes="Bold"/>
-                            </StackLayout>
-                        </Grid>
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
         </StackLayout>
     </ScrollView>
 </ContentPage>

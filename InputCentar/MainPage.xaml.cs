@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using InputCentar.ViewModels;
 
 namespace InputCentar
 {
@@ -17,8 +18,7 @@ namespace InputCentar
         public MainPage()
         {
             InitializeComponent();
-            GoToMainPageCommand = new Command(GoToMainPage);
-            BindingContext = this;
+
 
 
             /*   Task.Run(async () =>
@@ -35,12 +35,7 @@ namespace InputCentar
                });*/
         }
 
-        public ICommand GoToMainPageCommand { get; set; }
 
-        private async void GoToMainPage()
-        {
-            await Navigation.PushAsync(new MainPage());
-        }
     }
 
 

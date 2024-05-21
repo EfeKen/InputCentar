@@ -17,5 +17,5 @@
 
         <WebView x:Name="webView" Source="https://www.google.com/maps/place/Mokusnice+10/@44.1952708,17.9065352,17z/data=!3m1!4b1!4m6!3m5!1s0x475ee26acc449795:0x52381c41c4c44d6e!8m2!3d44.195267!4d17.9091155!16s%2Fg%2F1pv5x5n_t?entry=ttu" />
 
-    </StackLayout>
+    </VerticalStackLayout>
 </ContentPage>

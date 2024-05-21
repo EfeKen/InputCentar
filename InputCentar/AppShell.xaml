@@ -30,7 +30,9 @@
 
    <FlyoutItem Title="POČETNA">
        <ShellContent
-           ContentTemplate="{DataTemplate local:MainPage}"/>
+           ContentTemplate="{DataTemplate local:MainPage}"
+           Route="MainPage"/>
+       
    </FlyoutItem>
 
     <FlyoutItem Title="O NAMA">
@@ -42,8 +44,8 @@
 
     <FlyoutItem Title="EDUKACIJE">
         <ShellContent
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage"
+            ContentTemplate="{DataTemplate local:Edukacije}"
+            Route="Edukacije"
             />
     </FlyoutItem>
 

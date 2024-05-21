@@ -11,9 +11,7 @@
             </ResourceDictionary.MergedDictionaries>
 
             <!-- Customize the NavigationBar appearance -->
-            <Style TargetType="NavigationPage">
-                <Setter Property="HeightRequest" Value="100" />
-            </Style>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -6,7 +6,19 @@
     <ScrollView>
         <StackLayout Padding="20">
 
-            <Image Source="edukacija1.jpg"
+            <StackLayout>
+                <ImageButton Source="edukacija1.jpg"
+                     Clicked="ImageButton_Clicked"/>
+            </StackLayout>
+            <Image Source="edukacija2.jpg"
+               Aspect="AspectFit"/>
+            <Image Source="edukacija3.jpg"
+               Aspect="AspectFit"/>
+            <Image Source="edukacija4.jpg"
+               Aspect="AspectFit"/>
+            <Image Source="edukacija5.jpg"
+               Aspect="AspectFit"/>
+            <Image Source="edukacija6.jpg"
                Aspect="AspectFit"/>
             
             <Image Source="logo.png"

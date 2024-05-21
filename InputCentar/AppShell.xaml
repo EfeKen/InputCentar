@@ -5,43 +5,53 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:InputCentar">
 
+    
+
     <Shell.FlyoutHeader>
-        <StackLayout Padding="10, 10, 0, 10">
-            <Image Source="logo.png" HeightRequest="60" WidthRequest="120" Aspect="AspectFit">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding NavigateToMainPageCommand}" />
-                </Image.GestureRecognizers>
-            </Image>
+        <StackLayout Padding="10, 10, 0, 10" BackgroundColor="#0394fc">
+            <Image Source="logo.png" HeightRequest="60" WidthRequest="180" Aspect="AspectFit"/>
         </StackLayout>
     </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <StackLayout 
+                         Orientation="Horizontal" 
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         
+                         Spacing="30">
+
+                <Button Text="Login" WidthRequest="100" Clicked="LoginButton_Clicked"/>
+                <Button Text="Register" WidthRequest="100" Clicked="RegisterButton_Clicked"/>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
+
+   <FlyoutItem Title="POČETNA">
+       <ShellContent
+           ContentTemplate="{DataTemplate local:MainPage}"/>
+   </FlyoutItem>
 
     <FlyoutItem Title="O NAMA">
         <ShellContent
             ContentTemplate="{DataTemplate local:Onama}"
-            Route="Onama" />
-
+            Route="Onama"
+             />
     </FlyoutItem>
 
-    <FlyoutItem Title="PROJEKTI">
-        <ShellContent
-            ContentTemplate="{DataTemplate local:Projekti}"
-            Route="Projekti" />
-
-    </FlyoutItem>
     <FlyoutItem Title="EDUKACIJE">
         <ShellContent
-            ContentTemplate="{DataTemplate local:Edukacije}"
-            Route="Edukacije" />
-
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage"
+            />
     </FlyoutItem>
 
     <FlyoutItem Title="PRIDRUŽI SE">
         <ShellContent
             ContentTemplate="{DataTemplate local:PridruziSe}"
-            Route="PridruziSe">
-
-        </ShellContent>
-
+            Route="PridruziSe"
+             />
     </FlyoutItem>
     
     <FlyoutItem Title="REZERVIŠI">
@@ -55,7 +65,6 @@
         <ShellContent
             ContentTemplate="{DataTemplate local:Kontakt}"
             Route="Kontakt" />
-
     </FlyoutItem>
 
 </Shell>

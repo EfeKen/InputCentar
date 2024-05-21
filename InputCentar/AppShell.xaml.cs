@@ -1,24 +1,31 @@
 ﻿using Microsoft.Maui.Controls;
 using System;
 using System.Windows.Input;
+using Microsoft.Maui.Controls.Handlers;
+
 
 namespace InputCentar
 {
     public partial class AppShell : Shell
     {
-        public ICommand NavigateToMainPageCommand { get; }
 
         public AppShell()
         {
             InitializeComponent();
 
-            // Initialize the command
-            NavigateToMainPageCommand = new Command(NavigateToMainPage);
         }
 
-        private async void NavigateToMainPage()
+        private async void LoginButton_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("//MainPage");
+            
+            await Navigation.PushAsync(new LoginPage());
         }
+
+        private async void RegisterButton_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//RegisterPage");
+        }
+
     }
+
 }

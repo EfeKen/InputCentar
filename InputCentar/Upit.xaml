@@ -9,8 +9,9 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Image Source="logo.png"
-                   Aspect="AspectFit"
-                   HeightRequest="50"
-                   HorizontalOptions="Center"/>
+               Margin="20"
+               Aspect="AspectFit"
+               HeightRequest="50"
+               HorizontalOptions="Center"/>
     </VerticalStackLayout>
 </ContentPage>

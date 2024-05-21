@@ -3,41 +3,61 @@
     x:Class="InputCentar.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:InputCentar"
-    xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"    
-    BackgroundColor="White">
+    xmlns:local="clr-namespace:InputCentar">
+
     
-    <Shell.TitleView>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
 
-            <Image Source="logo.png" HeightRequest="60" WidthRequest="100" Aspect="AspectFit" Margin="5" HorizontalOptions="End">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding Source={x:Reference MainPage}, Path=BindingContext.GoToMainPageCommand}" />
-                </Image.GestureRecognizers>
-            </Image>
-        </Grid>
-    </Shell.TitleView>
+    <Shell.FlyoutHeader>
+        <StackLayout Padding="10, 10, 0, 10" BackgroundColor="#0394fc">
+            <Image Source="logo.png" HeightRequest="60" WidthRequest="180" Aspect="AspectFit"/>
+        </StackLayout>
+    </Shell.FlyoutHeader>
 
-    <Shell.FlyoutHeaderTemplate>
+    <Shell.FlyoutFooterTemplate>
         <DataTemplate>
-            <StackLayout Padding="10, 10, 0, 10">
-                <Image Source="logo.png" HeightRequest="60" WidthRequest="120" Aspect="AspectFit">
-                </Image>
+            <StackLayout 
+                         Orientation="Horizontal" 
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         
+                         Spacing="30">
+
+                <Button Text="Login" WidthRequest="100" Clicked="LoginButton_Clicked"/>
+                <Button Text="Register" WidthRequest="100" Clicked="RegisterButton_Clicked"/>
             </StackLayout>
         </DataTemplate>
-    </Shell.FlyoutHeaderTemplate>
+    </Shell.FlyoutFooterTemplate>
 
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="POČETNA" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
-        <ShellContent Title="O NAMA" ContentTemplate="{DataTemplate local:Onama}" Route="Onama"/>
-        <ShellContent Title="PROJEKTI" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
-        <ShellContent Title="EDUKACIJE" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
-        <ShellContent Title="PRIDRUŽI SE" ContentTemplate="{DataTemplate local:PridruziSe}" Route="PridruziSe"/>
-        <ShellContent Title="KONTAKT" ContentTemplate="{DataTemplate local:Kontakt}" Route="Kontakt"/>
+   <FlyoutItem Title="POČETNA">
+       <ShellContent
+           ContentTemplate="{DataTemplate local:MainPage}"/>
+   </FlyoutItem>
+
+    <FlyoutItem Title="O NAMA">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:Onama}"
+            Route="Onama"
+             />
     </FlyoutItem>
-    
+
+    <FlyoutItem Title="EDUKACIJE">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage"
+            />
+    </FlyoutItem>
+
+    <FlyoutItem Title="PRIDRUŽI SE">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:PridruziSe}"
+            Route="PridruziSe"
+             />
+    </FlyoutItem>
+
+    <FlyoutItem Title="KONTAKT">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:Kontakt}"
+            Route="Kontakt" />
+    </FlyoutItem>
+
 </Shell>

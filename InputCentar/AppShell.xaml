@@ -53,6 +53,13 @@
             Route="PridruziSe"
              />
     </FlyoutItem>
+    
+    <FlyoutItem Title="REZERVIŠI">
+        <ShellContent
+        ContentTemplate="{DataTemplate local:Rezervacije}"
+        Route="Kontakt" />
+
+    </FlyoutItem>
 
     <FlyoutItem Title="KONTAKT">
         <ShellContent

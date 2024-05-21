@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InputCentar.Doniraj"
+             Title="Doniraj">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label 
+            Text="DONIRAJ ZA NAPREDAK ZAJEDNICE"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Padding="20"
+                FontSize="18"
+                FontAttributes="Bold"/>
+            <Label
+                Text="Dragi prijatelji,"
+                Padding="16"/>
+            <Label
+                Text="Sa zadovoljstvom želimo da vas upoznamo sa našom organizacijom – Centar za mlade INPUT. Već punih 16 godina, mi smo posvećeni poticanju i edukaciji mladih ka razvoju njihovih vještina i karijere. Naša misija nije samo pružiti podršku mladima, već i doprinijeti zajednici u kojoj djelujemo."
+                Padding="16"/>
+            <Label
+                Text="Kroz godine, realizirali smo mnoge aktivnosti i projekte koji su imali pozitivan uticaj na mlade i zajednicu u cjelini. Kroz naše programe, mladi su stekli nove vještine, proširili svoje vidike i stvorili osnovu za uspješnu karijeru. Neki od naših projekata uključuju edukativne radionice, mentorske programe, volonterske akcije, kulturne događaje i još mnogo toga."
+                Padding="16"/>
+            <Label
+                Text="Međutim, naš rad ne može opstati bez podrške zajednice i pojedinaca poput vas. Zato vas ovim putem pozivamo da podržite naš rad doniranjem za mlade i društvenu zajednicu. Vaša donacija omogućava nam da nastavimo sa realizacijom programa i projekata koji su od ključnog značaja za razvoj mladih i zajednice."
+                Padding="16"/>
+            <Label
+                Text="Svaka vaša donacija ima veliki značaj. Pomažete nam da stvaramo bolju budućnost za mlade, da im pružimo prilike za rast i razvoj, te da zajedno gradimo bolje društvo."
+                Padding="16"/>
+            <Label
+                Text="Hvala vam na podršci i vjerujemo da zajedno možemo ostvariti pozitivne promjene."
+                Padding="16"/>
+            <Label
+                Text="S poštovanjem, Centar za mlade INPUT"
+                Padding="16"/>
+            <Label Text="ZA DONACIJE IZ BOSNE I HERCEGOVINE:"
+                   FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="Primaoc: Centar za mlade INPUT" HorizontalOptions="CenterAndExpand" />
+            <Label Text="Adresa: Prvomajska bb, 72 000 Zenica" HorizontalOptions="CenterAndExpand" />
+            <Label Text="Broj žiroračuna: 161 055 001 207 0033" HorizontalOptions="CenterAndExpand" />
+
+            <Label Text=""/>
+
+            <Label Text="ZA DONACIJE IZ INOSTRANSTVA:"
+                   FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="Primaoc: Centar za mlade INPUT" HorizontalOptions="CenterAndExpand" />
+            <Label Text="Adresa: Prvomajska bb, 72 000 Zenica" HorizontalOptions="CenterAndExpand" />
+            <Label Text="SWIFT/BIC CODE:" HorizontalOptions="CenterAndExpand" />
+            <Label Text="ACCOUNT IBAN:" HorizontalOptions="CenterAndExpand" />
+
+            <Label Text=""/>
+
+            <Label Text="Naziv banke: ,Raiffeisen Bank d.d. Bosna i Hercegovina" HorizontalOptions="CenterAndExpand" />
+            <Label Text="Adresa: Marsala Tita bb, 72 000 Zenica" HorizontalOptions="CenterAndExpand" />
+            <Image Source="logo.png"
+                   Aspect="AspectFit"
+                   HeightRequest="50"
+                   HorizontalOptions="Center"
+                   Margin="20"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -49,6 +49,28 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\book.png" />
+	  <None Remove="Resources\Images\cpu.png" />
+	  <None Remove="Resources\Images\creativity.png" />
+	  <None Remove="Resources\Images\it.png" />
+	  <None Remove="Resources\Images\office.png" />
+	  <None Remove="Resources\Images\stem.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.19" />
+		<PackageReference Include="Microsoft.Data.Sqlite.Core" Version="7.0.19" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.19" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="7.0.19" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.19">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.19" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.19">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
 	</ItemGroup>
@@ -58,10 +80,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="LoginPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="LogoTileView.xaml">
+	  <MauiXaml Update="Doniraj.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Onama.xaml">
@@ -79,7 +98,31 @@
 	  <MauiXaml Update="Kontakt.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Praksa.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="PridruziSe.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Rezervacije.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Upit.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Volontiraj.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Projekti.xaml.cs">
+	    <DependentUpon>Projekti.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Projekti.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

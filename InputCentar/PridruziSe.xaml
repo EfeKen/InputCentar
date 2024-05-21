@@ -4,15 +4,12 @@
              xmlns:inputCentar="using:InputCentar"
              x:Class="InputCentar.PridruziSe"
              Title="Pridruzi se">
-
-    <Shell.TitleView>
-        <inputCentar:LogoTileView/>
-    </Shell.TitleView>
-
-    <VerticalStackLayout>
-        <Label 
-            Text="Volontiraj i ti"
-            VerticalOptions="Center" 
-            HorizontalOptions="Start" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <StackLayout>
+            <Button Text="Volontiraj" Clicked="Page1Button_Clicked" Padding="10" Margin="10"/>
+            <Button Text="Praksa" Clicked="Page2Button_Clicked" Padding="10" Margin="10"/>
+            <Button Text="Upit" Clicked="Page3Button_Clicked" Padding="10" Margin="10"/>
+            <Button Text="Doniraj" Clicked="Page4Button_Clicked" Padding="10" Margin="10"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

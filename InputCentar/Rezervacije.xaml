@@ -1,0 +1,63 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InputCentar.Rezervacije">
+
+    <StackLayout Orientation="Vertical">
+
+        <!-- Horizontal Scrollable Segment -->
+        <ScrollView Orientation="Horizontal">
+
+            <!-- Wrap the Frame elements inside a StackLayout -->
+            <StackLayout Orientation="Horizontal">
+                <Frame BackgroundColor="#F2F2F2" Padding="5" CornerRadius="10" HasShadow="True" Margin="5" HeightRequest="70" WidthRequest="70">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="IconTapped" />
+                    </Frame.GestureRecognizers>
+                    <Image Source="it.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" />
+                </Frame>
+
+                <Frame BackgroundColor="#F2F2F2" Padding="5" CornerRadius="10" HasShadow="True" Margin="5" HeightRequest="70" WidthRequest="70">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Icon1Tapped" />
+                    </Frame.GestureRecognizers>
+                    <Image Source="book.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" />
+                </Frame>
+
+                <Frame BackgroundColor="#F2F2F2" Padding="5" CornerRadius="10" HasShadow="True" Margin="5" HeightRequest="70" WidthRequest="70">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Icon2Tapped" />
+                    </Frame.GestureRecognizers>
+                    <Image Source="cpu.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" />
+                </Frame>
+
+                <Frame BackgroundColor="#F2F2F2" Padding="5" CornerRadius="10" HasShadow="True" Margin="5" HeightRequest="70" WidthRequest="70">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Icon3Tapped" />
+                    </Frame.GestureRecognizers>
+                    <Image Source="office.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" />
+                </Frame>
+
+                <Frame BackgroundColor="#F2F2F2" Padding="5" CornerRadius="10" HasShadow="True" Margin="5" HeightRequest="70" WidthRequest="70">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Icon4Tapped" />
+                    </Frame.GestureRecognizers>
+                    <Image Source="stem.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" />
+                </Frame>
+                <Frame BackgroundColor="#F2F2F2" Padding="5" CornerRadius="10" HasShadow="True" Margin="5" HeightRequest="70" WidthRequest="70">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Icon5Tapped" />
+                    </Frame.GestureRecognizers>
+                    <Image Source="creativity.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" />
+                </Frame>
+            </StackLayout>
+
+        </ScrollView>
+
+        <!-- Your Content Below -->
+        <StackLayout x:Name="Default" >
+            <Label Text="Ovdje se iznajmljuje sve!"/>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

@@ -83,6 +83,9 @@
 	  <MauiXaml Update="Doniraj.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Edukacije.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Onama.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

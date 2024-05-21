@@ -33,6 +33,7 @@
                 Padding="20"
                 />
             <Image Source="logo.png"
+                   Margin="20"
                    Aspect="AspectFit"
                    HeightRequest="50"
                    HorizontalOptions="Center"/>

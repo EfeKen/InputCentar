@@ -7,24 +7,65 @@
         <StackLayout Padding="20">
 
             <StackLayout>
-                <ImageButton Source="edukacija1.jpg"
+                <ImageButton Source="edukacija1.jpg" 
                      Clicked="ImageButton_Clicked"/>
+                <Label Text="Web Development" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="20 20 20 20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Label_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
             </StackLayout>
-            <Image Source="edukacija2.jpg"
-               Aspect="AspectFit"/>
-            <Image Source="edukacija3.jpg"
-               Aspect="AspectFit"/>
-            <Image Source="edukacija4.jpg"
-               Aspect="AspectFit"/>
-            <Image Source="edukacija5.jpg"
-               Aspect="AspectFit"/>
-            <Image Source="edukacija6.jpg"
-               Aspect="AspectFit"/>
-            
-            <Image Source="logo.png"
+            <StackLayout>
+                <ImageButton Source="edukacija2.jpg" 
+                     Clicked="ImageButton_Clicked"/>
+                <Label Text="3D modeling" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="20 20 20 20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Label_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout>
+                <ImageButton Source="edukacija3.jpg" 
+                     Clicked="ImageButton_Clicked"/>
+                <Label Text="Scratch za djecu" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="20 20 20 20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Label_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout>
+                <ImageButton Source="edukacija4.jpg" 
+                     Clicked="ImageButton_Clicked"/>
+                <Label Text="Poduzetništvo" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="20 20 20 20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Label_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout>
+                <ImageButton Source="edukacija5.jpg" 
+                     Clicked="ImageButton_Clicked"/>
+                <Label Text="Python" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="20 20 20 20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Label_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout>
+                <ImageButton Source="edukacija6.jpg" 
+                     Clicked="ImageButton_Clicked"/>
+                <Label Text="STEM radionice" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="20 20 20 20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Label_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout>
+                <Image Source="logo.png"
                    Aspect="AspectFit"
                    HeightRequest="50"
                    HorizontalOptions="Center"/>
+            </StackLayout>
         </StackLayout>
     </ScrollView>
 </ContentPage>

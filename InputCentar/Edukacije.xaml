@@ -66,6 +66,11 @@
                    HeightRequest="50"
                    HorizontalOptions="Center"/>
             </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
+                <ImageButton Source="fbicon.png" WidthRequest="50" HeightRequest="50" Clicked="FacebookButton_Clicked" Margin="10"/>
+                <ImageButton Source="igicon.png" WidthRequest="50" HeightRequest="50" Clicked="InstagramButton_Clicked" Margin="10"/>
+                <ImageButton Source="lnicon.png" WidthRequest="50" HeightRequest="50" Clicked="LinkedInButton_Clicked" Margin="10"/>
+            </StackLayout>
         </StackLayout>
     </ScrollView>
 </ContentPage>

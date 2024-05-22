@@ -6,10 +6,10 @@
              Title="Pridruzi se">
     <ScrollView>
         <StackLayout>
-            <Button Text="Volontiraj" Clicked="Page1Button_Clicked" Padding="16" Margin="16"/>
-            <Button Text="Praksa" Clicked="Page2Button_Clicked" Padding="16" Margin="16"/>
-            <Button Text="Upit" Clicked="Page3Button_Clicked" Padding="16" Margin="16"/>
-            <Button Text="Doniraj" Clicked="Page4Button_Clicked" Padding="16" Margin="16"/>
+            <ImageButton Source="volontiraj.png" Clicked="OnImageButton_Clicked"/>
+            <ImageButton Source="praksa.png" Clicked="OnImageButton2_Clicked"/>
+            <ImageButton Source="upit.png" Clicked="OnImageButton3_Clicked"/>
+            <ImageButton Source="doniraj.png" Clicked="OnImageButto4_Clicked"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

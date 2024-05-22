@@ -64,6 +64,7 @@
             <Image Source="logo.png"
                    Aspect="AspectFit"
                    HeightRequest="50"
+                   Margin="20"
                    HorizontalOptions="Center"/>
         </StackLayout>
     </ScrollView>

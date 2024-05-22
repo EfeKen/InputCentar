@@ -4,12 +4,13 @@
              xmlns:inputCentar="using:InputCentar"
              x:Class="InputCentar.PridruziSe"
              Title="Pridruzi se">
+    
     <ScrollView>
-        <StackLayout>
-            <Button Text="Volontiraj" Clicked="Page1Button_Clicked" Padding="16" Margin="16"/>
-            <Button Text="Praksa" Clicked="Page2Button_Clicked" Padding="16" Margin="16"/>
-            <Button Text="Upit" Clicked="Page3Button_Clicked" Padding="16" Margin="16"/>
-            <Button Text="Doniraj" Clicked="Page4Button_Clicked" Padding="16" Margin="16"/>
+        <StackLayout Background="#0394fc">
+            <ImageButton Source="volontiraj.png" Clicked="OnImageButton_Clicked" Margin="0 0 10 0"/>
+            <ImageButton Source="praksa.jpg" Clicked="OnImageButton2_Clicked" Margin="0 0 10 0"/>
+            <ImageButton Source="upit.png" Clicked="OnImageButton3_Clicked" Margin="0 0 10 0"/>
+            <ImageButton Source="doniraj.jpg" Clicked="OnImageButto4_Clicked" Margin="0 0 10 0"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

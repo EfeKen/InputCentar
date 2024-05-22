@@ -10,16 +10,19 @@
     </Shell.TitleView>
 
     <ScrollView>
-        <StackLayout>
+        <StackLayout BackgroundColor="#2f2f41">
             <Image Source="mapa.png"
-                   Aspect="AspectFit"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
+                   
+                   />
             <ImageButton Source="adresa.png"
+                         Scale="0.6"
+                         CornerRadius="50"
                          Clicked="ImageButton_Clicked"/>
             <ImageButton Source="telefon.png"
+                         Scale="0.6"
                          Clicked="OnCallButtonClicked"/>
             <ImageButton Source="mail.png"
+                         Scale="0.6"
                          Clicked="ImageButton_ClickedI"/>
         </StackLayout>
     </ScrollView>

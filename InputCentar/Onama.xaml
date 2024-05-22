@@ -4,6 +4,11 @@
              xmlns:inputCentar="using:InputCentar"
              x:Class="InputCentar.Onama"
              Title="O NAMA">
+
+    <Shell.TitleView>
+        <inputCentar:LogoTileView/>
+    </Shell.TitleView>
+
     <ScrollView>
         <StackLayout Padding="20">
 

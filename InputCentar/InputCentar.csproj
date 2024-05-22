@@ -94,7 +94,7 @@
 	  <MauiXaml Update="Edukacije.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Kalendar.xaml">
+	  <MauiXaml Update="NewsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Onama.xaml">

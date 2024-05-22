@@ -1,135 +1,170 @@
 using System;
-using Microsoft.Maui.Controls;
+using System.Globalization;
+
+
 
 namespace InputCentar
 {
     public partial class Kalendar : ContentPage
     {
-        private DateTime? startDate;
-        private DateTime? endDate;
-
-        public bool IsRentalDateSelected => startDate.HasValue && endDate.HasValue;
+        private DateTime currentMonth;
+        private DateTime selectedStartDate;
+        private DateTime selectedEndDate;
 
         public Kalendar()
         {
             InitializeComponent();
 
-            // Populate the calendar grid with dates
-            PopulateCalendarGrid();
+            // Initialize the calendar
+            currentMonth = DateTime.Today;
+            selectedStartDate = DateTime.MinValue;
+            selectedEndDate = DateTime.MinValue;
+            DisplayCalendar(currentMonth);
         }
 
-        private void PopulateCalendarGrid()
+        private void DisplayCalendar(DateTime month)
         {
-            // Define the number of rows and columns for the calendar grid
-            const int numRows = 6; // 6 weeks for a typical month
-            const int numCols = 7; // 7 days in a week
+            calendarGrid.Children.Clear();
+            calendarGrid.RowDefinitions.Clear();
+            calendarGrid.ColumnDefinitions.Clear();
 
-            // Iterate over each row and column to create calendar cells
-            for (int row = 0; row < numRows; row++)
+            // Add year label
+            Label yearLabel = new Label
             {
-                for (int col = 0; col < numCols; col++)
+                Text = month.ToString("MMMM yyyy"),
+                HorizontalTextAlignment = TextAlignment.Center,
+                FontAttributes = FontAttributes.Bold
+            };
+
+            // Specify column span for the year label
+            Grid.SetColumnSpan(yearLabel, 7);
+
+            calendarGrid.Children.Add(yearLabel);
+
+            // Add weekday labels
+            for (int i = 0; i < 7; i++)
+            {
+                calendarGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
+                Label label = new Label
                 {
-                    // Calculate the date for the current cell based on the row and column
-                    DateTime date = DateTime.Today.AddDays((row * numCols) + col);
+                    Text = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedDayNames[i],
+                    HorizontalTextAlignment = TextAlignment.Center,
+                    VerticalTextAlignment = TextAlignment.Center
+                };
 
-                    // Create a label to display the date
-                    Label label = new Label
-                    {
-                        Text = date.Day.ToString(),
-                        HorizontalOptions = LayoutOptions.Center,
-                        VerticalOptions = LayoutOptions.Center
-                    };
+                // Specify column and row positions for weekday labels
+                Grid.SetColumn(label, i);
+                Grid.SetRow(label, 1);
 
-                    // Determine the background color for the date cell
-                    Color backgroundColor = GetDateBackgroundColor(date);
+                calendarGrid.Children.Add(label);
+            }
 
-                    // Set the background color of the label
-                    label.BackgroundColor = backgroundColor;
+            // Get the first day of the month and number of days in the month
+            DateTime firstDayOfMonth = new DateTime(month.Year, month.Month, 1);
+            int daysInMonth = DateTime.DaysInMonth(month.Year, month.Month);
 
-                    // Add the label to the calendar grid at the current row and column
-                    Grid.SetRow(label, row);
-                    Grid.SetColumn(label, col);
-                    calendarGrid.Children.Add(label);
+            // Calculate the starting column for the first day of the month
+            int startColumn = (int)firstDayOfMonth.DayOfWeek;
 
-                    // Add tap gesture recognizer to handle date selection
-                    TapGestureRecognizer tapGestureRecognizer = new TapGestureRecognizer();
-                    tapGestureRecognizer.Tapped += (sender, e) => SelectDate(date);
-                    label.GestureRecognizers.Add(tapGestureRecognizer);
+            // Add rows for each week
+            int numRows = (int)Math.Ceiling((startColumn + daysInMonth) / 7.0) + 2; // Add 2 rows for the last week
+            for (int i = 0; i < numRows; i++)
+            {
+                calendarGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            }
+
+            // Add days of the month
+            int row = 2; // Start from row 2
+            int col = startColumn; // Start from the calculated start column
+            for (int day = 1; day <= daysInMonth; day++)
+            {
+                DateTime date = new DateTime(month.Year, month.Month, day);
+
+                Label label = new Label
+                {
+                    Text = day.ToString(),
+                    HorizontalTextAlignment = TextAlignment.Center,
+                    VerticalTextAlignment = TextAlignment.Center,
+                    BackgroundColor = (date >= selectedStartDate && date <= selectedEndDate) ? Color.FromRgb(255, 0, 0) : Color.FromRgb(255, 255, 255) // Red for selected range, white otherwise
+                };
+
+                // Specify column and row positions for day labels
+                Grid.SetColumn(label, col);
+                Grid.SetRow(label, row);
+
+                calendarGrid.Children.Add(label);
+                col = (col + 1) % 7;
+
+                // Move to the next row if necessary
+                if (col == 0)
+                {
+                    row++;
                 }
             }
         }
 
-        private Color GetDateBackgroundColor(DateTime date)
+
+        private void CalendarDayTapped(object sender, EventArgs e)
         {
-            // Implement logic to determine the background color based on the date
-            // For example, use red for occupied dates and green outlined for available dates
-            if (IsDateOccupied(date))
+            var label = (Label)sender;
+            var day = int.Parse(label.Text);
+
+            DateTime date = new DateTime(currentMonth.Year, currentMonth.Month, day);
+
+            if (selectedStartDate == DateTime.MinValue)
             {
-                // Red color (RGB: 255, 0, 0)
-                return Color.FromRgb(255, 0, 0);
+                selectedStartDate = date;
+                label.BackgroundColor = Color.FromRgb(255, 0, 0); // Red
             }
-            else if (IsDateAvailable(date))
+            else if (selectedEndDate == DateTime.MinValue)
             {
-                // Transparent color (RGB: 0, 0, 0, 0)
-                return Color.FromRgba(0, 0, 0, 0);
+                if (date > selectedStartDate)
+                {
+                    selectedEndDate = date;
+                    label.BackgroundColor = Color.FromRgb(255, 0, 0); // Red
+                }
+                else
+                {
+                    // If user selects a date before the start date, reset selection
+                    selectedStartDate = date;
+                    selectedEndDate = DateTime.MinValue;
+                    DisplayCalendar(currentMonth); // Refresh calendar display
+                }
             }
             else
             {
-                // Light gray color (RGB: 211, 211, 211)
-                return Color.FromRgb(211, 211, 211);
+                // If both start and end dates are selected, reset selection
+                selectedStartDate = date;
+                selectedEndDate = DateTime.MinValue;
+                DisplayCalendar(currentMonth); // Refresh calendar display
             }
         }
 
-        private bool IsDateOccupied(DateTime date)
+        private void RezervirajButton_Clicked(object sender, EventArgs e)
         {
-            // Implement logic to check if the date is occupied (already rented)
-            // This is a placeholder method, replace it with your actual implementation
-            // For example, check if the date falls within an existing rental period
-            return false;
-        }
-
-        private bool IsDateAvailable(DateTime date)
-        {
-            // Implement logic to check if the date is available (not rented)
-            // This is a placeholder method, replace it with your actual implementation
-            // For example, check if the date does not fall within any existing rental periods
-            return true;
-        }
-
-        private void SelectDate(DateTime date)
-        {
-            // Handle date selection
-            if (!startDate.HasValue)
+            // Handle reservation confirmation
+            if (selectedStartDate != DateTime.MinValue && selectedEndDate != DateTime.MinValue)
             {
-                startDate = date;
-            }
-            else if (!endDate.HasValue)
-            {
-                endDate = date;
+                // Reservation confirmed for selectedStartDate to selectedEndDate
+                // Perform any necessary actions here
+                // For example, display confirmation message or process reservation
+                // Reset selected dates after confirmation
+                selectedStartDate = DateTime.MinValue;
+                selectedEndDate = DateTime.MinValue;
+                DisplayCalendar(currentMonth); // Refresh calendar display
             }
             else
             {
-                startDate = date;
-                endDate = null;
+                // Show error message or prompt user to select both start and end dates
             }
-
-            // Update the calendar grid to reflect the selected dates
-            PopulateCalendarGrid();
         }
 
-        private async void ConfirmRental_Clicked(object sender, EventArgs e)
+        
+        private void NextMonth_Clicked(object sender, EventArgs e)
         {
-            // Handle confirm rental button click
-            if (startDate.HasValue && endDate.HasValue)
-            {
-                // Implement logic to confirm the rental and store the rental details
-                // This is a placeholder method, replace it with your actual implementation
-                await DisplayAlert("Rental Confirmed", $"Start Date: {startDate}\nEnd Date: {endDate}", "OK");
-            }
-            else
-            {
-                await DisplayAlert("Error", "Please select start and end dates for the rental.", "OK");
-            }
+            currentMonth = currentMonth.AddMonths(1);
+            DisplayCalendar(currentMonth);
         }
     }
 }

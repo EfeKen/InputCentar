@@ -2,15 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InputCentar.Kalendar"
-             Title="Kalendar">
+             Title="Calendar">
 
-    <StackLayout>
-        <Grid x:Name="calendarGrid" Margin="10">
-            <!-- Calendar grid cells will be populated dynamically -->
-        </Grid>
-        <Button Text="Confirm Rental"
-                Clicked="ConfirmRental_Clicked"
-                IsEnabled="{Binding IsRentalDateSelected}" />
-    </StackLayout>
+	<StackLayout>
+		<Grid x:Name="calendarGrid" Margin="10"/>
+		<Button Text="Next Month"
+                Clicked="NextMonth_Clicked"
+                HorizontalOptions="Center"
+                VerticalOptions="End"/>
+	</StackLayout>
 
-</ContentPage> 
+</ContentPage>

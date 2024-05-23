@@ -8,17 +8,18 @@
             Text="Postavite pitanje"
             FontSize="24"
             FontAttributes="Bold"
-            Margin="10"
+            Margin="20"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Frame
             BorderColor="Black"
+            CornerRadius="20"
             Margin="16">
             <VerticalStackLayout>
                 <Editor 
                     Placeholder="Upišite pitanje ovdje"
                     AutoSize="TextChanges"
-                    HeightRequest="150"/>
+                    HeightRequest="160"/>
                 <Button Text="Pošalji" Margin="20" Clicked="Button_Clicked"/>
             </VerticalStackLayout>
         </Frame>

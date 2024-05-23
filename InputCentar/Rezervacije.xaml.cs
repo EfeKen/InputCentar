@@ -81,16 +81,17 @@ namespace InputCentar
 
             Default.Children.Add(listView);
         }
-        private void LoadItemList1()
+        private async void LoadItemList1()
         {
-            Default.Children.Clear();
+            //Default.Children.Clear();
 
 
-            ListView listView = new ListView();
+            // ListView listView = new ListView();
 
-            listView.ItemsSource = new List<string> { "Knjiga 1", "Knjiga 2", "Knjiga 3" };
+            //listView.ItemsSource = new List<string> { "Knjiga 1", "Knjiga 2", "Knjiga 3" };
 
-            Default.Children.Add(listView);
+            // Default.Children.Add(listView);
+            await Navigation.PushAsync(new Kalendar());
         }
         private void LoadItemList2()
         {

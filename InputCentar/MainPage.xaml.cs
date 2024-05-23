@@ -9,17 +9,14 @@ namespace InputCentar
     public partial class MainPage : ContentPage
     {
 
-
-
-        //private List<string> imageSources = new List<string> { "image1.jpg", "image2.jpg", "image3.jpg" };
-        // private int currentIndex = 0;
-
+        NewsViewModel viewModel;
         public MainPage()
         {
             InitializeComponent();
             GoToMainPageCommand = new Command(GoToMainPage);
             BindingContext = this;
 
+            viewModel = (NewsViewModel)BindingContext;
 
             /*   Task.Run(async () =>
                {
@@ -34,8 +31,11 @@ namespace InputCentar
                    }
                });*/
         }
-
-        public ICommand GoToMainPageCommand { get; set; }
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await viewModel.LoadNewsItemsAsync();
+        }
 
         private async void GoToMainPage()
         {

@@ -5,9 +5,24 @@
              Title="Upit">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Postavite pitanje"
+            FontSize="24"
+            FontAttributes="Bold"
+            Margin="20"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Frame
+            BorderColor="Black"
+            CornerRadius="20"
+            Margin="16">
+            <VerticalStackLayout>
+                <Editor 
+                    Placeholder="Upišite pitanje ovdje"
+                    AutoSize="TextChanges"
+                    HeightRequest="160"/>
+                <Button Text="Pošalji" Margin="20" Clicked="Button_Clicked"/>
+            </VerticalStackLayout>
+        </Frame>
         <Image Source="logo.png"
                Margin="20"
                Aspect="AspectFit"

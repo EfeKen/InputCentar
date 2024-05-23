@@ -7,10 +7,10 @@
     
     <ScrollView>
         <StackLayout Background="#0394fc">
-            <ImageButton Source="volontiraj.png" Clicked="OnImageButton_Clicked" Margin="0 0 10 0"/>
-            <ImageButton Source="praksa.jpg" Clicked="OnImageButton2_Clicked" Margin="0 0 10 0"/>
-            <ImageButton Source="upit.png" Clicked="OnImageButton3_Clicked" Margin="0 0 10 0"/>
-            <ImageButton Source="doniraj.jpg" Clicked="OnImageButto4_Clicked" Margin="0 0 10 0"/>
+            <ImageButton Source="volontiraj.png" Clicked="OnImageButton_Clicked" Margin="10"/>
+            <ImageButton Source="praksa.jpg" Clicked="OnImageButton2_Clicked" Margin="10"/>
+            <ImageButton Source="upit.png" Clicked="OnImageButton3_Clicked" Margin="10"/>
+            <ImageButton Source="doniraj.jpg" Clicked="OnImageButto4_Clicked" Margin="10"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

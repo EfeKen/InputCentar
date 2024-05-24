@@ -119,6 +119,9 @@
 	  <MauiXaml Update="PridruziSe.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Registracija.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Rezervacije.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

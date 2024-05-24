@@ -7,4 +7,9 @@ public partial class LoginPage : ContentPage
 		InitializeComponent();
     }
 
+    private void Registracija_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new Registracija());
+    }
+
 }

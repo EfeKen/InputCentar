@@ -74,7 +74,7 @@
                 <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
                     <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
                         <Image VerticalOptions="Center" Source="password.png" HeightRequest="25" WidthRequest="25"/>
-                        <Entry VerticalOptions="Center" Placeholder="Password" IsPassword="True" Grid.Column="1"/>
+                        <Entry VerticalOptions="Center" Placeholder="Šifra" IsPassword="True" Grid.Column="1"/>
                     </Grid>
                 </Frame>
 
@@ -84,9 +84,9 @@
 
                 <HorizontalStackLayout Spacing="10">
                     <Label Text="Nemate profil?" VerticalTextAlignment="Center"/>
-                    <Label Text="REGISTRUJ SE" FontSize="18"
-                           FontAttributes="Bold"
-                           TextColor="{x:StaticResource Primary}"/>
+                    <Button Clicked="Registracija_Clicked" Text="REGISTRUJ SE" FontSize="18"
+                           FontAttributes="Bold"/>
+
                 </HorizontalStackLayout>
 
             </VerticalStackLayout>            

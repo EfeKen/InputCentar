@@ -54,5 +54,11 @@
             Route="Kontakt" />
     </FlyoutItem>
 
-    
+    <FlyoutItem Title="PRIJAVA">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:LoginPage}"
+            Route="LoginPage"/>
+    </FlyoutItem>
+
+
 </Shell>

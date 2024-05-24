@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="InputCentar.Kalendar">
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"   >
+
+            <Label Text="Choose Start Date" HorizontalOptions="CenterAndExpand" />
+            <Picker x:Name="StartPicker" VerticalOptions="Start" >
+                <Picker.Title>Dan</Picker.Title>
+            </Picker>
+            <Picker x:Name="StartPickerMM" VerticalOptions="Center" >
+                <Picker.Title>Mjesec</Picker.Title>
+            </Picker>
+            <Picker x:Name="StartPickerYY" VerticalOptions="End" Margin="0,0,0,10">
+                <Picker.Title>Godina</Picker.Title>
+            </Picker>
+
+            <Label Text="Choose End Date" HorizontalOptions="CenterAndExpand" Margin="0,10,0,10"/>
+            <Picker x:Name="EndPicker" VerticalOptions="Start" Margin="0,0,0,10">
+                <Picker.Title>Dan</Picker.Title>
+            </Picker>
+
+            <Picker x:Name="EndPickerMM" VerticalOptions="Center" Margin="0,0,0,10">
+                <Picker.Title>Mjesec</Picker.Title>
+            </Picker>
+            <Picker x:Name="EndPickerYY" VerticalOptions="End" Margin="0,0,0,10">
+                <Picker.Title>Godina</Picker.Title>
+            </Picker>
+
+            <Button Text="Rent" Clicked="RentButton_Clicked" HorizontalOptions="FillAndExpand" BackgroundColor="#007AFF" TextColor="White"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

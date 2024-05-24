@@ -16,7 +16,6 @@
                    />
             <ImageButton Source="adresa.png"
                          Scale="0.6"
-                         CornerRadius="50"
                          Clicked="ImageButton_Clicked"/>
             <ImageButton Source="telefon.png"
                          Scale="0.6"

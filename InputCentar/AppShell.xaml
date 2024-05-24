@@ -56,8 +56,8 @@
 
     <FlyoutItem Title="PRIJAVA">
         <ShellContent
-        ContentTemplate="{DataTemplate local:LoginPage}"
-        Route="LoginPage" />
+            ContentTemplate="{DataTemplate local:LoginPage}"
+            Route="LoginPage"/>
     </FlyoutItem>
 
 

@@ -4,8 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace InputCentar
 {
+    public enum UserRoles
+    {
+        Admin,
+        User,
+        Visitor
+    }
     public class User
     {
         public int Id { get; set; }
@@ -14,5 +22,6 @@ namespace InputCentar
         public string Username { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public UserRoles Role { get; set; }
     }
 }

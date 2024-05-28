@@ -67,6 +67,7 @@
                 <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
                     <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
                         <Image VerticalOptions="Center" Source="email.png" HeightRequest="25" WidthRequest="25"/>
+                       
                         <Entry VerticalOptions="Center" Placeholder="Email" Grid.Column="1"/>
                     </Grid>
                 </Frame>
@@ -78,7 +79,7 @@
                     </Grid>
                 </Frame>
 
-                <Button CornerRadius="0" HeightRequest="60" Text="PRIJAVI SE" FontSize="20" FontAttributes="Bold"/>
+                <Button CornerRadius="0" HeightRequest="60" Text="PRIJAVI SE" FontSize="20" FontAttributes="Bold" Clicked="Login_Clicked"/>
 
                 <Label FontAttributes="Bold" Text="Zaboravili šifru?" TextColor="Black" HorizontalTextAlignment="Center"/>
 

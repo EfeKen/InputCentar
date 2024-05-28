@@ -7,7 +7,7 @@ namespace InputCentar
 {
     public partial class App : Application
     {
-        static NewsItemDatabase database;
+        static DatabaseService database;
 
         public App()
         {
@@ -15,14 +15,14 @@ namespace InputCentar
             MainPage = new AppShell(); // Ensure your AppShell.xaml is set up correctly
         }
 
-        public static NewsItemDatabase Database
+        public static DatabaseService Database
         {
             get
             {
                 if (database == null)
                 {
-                    var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "NewsItems.db3");
-                    database = new NewsItemDatabase(dbPath);
+                    var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "InputCentar.db3");
+                    database = new DatabaseService(dbPath);
                 }
                 return database;
             }

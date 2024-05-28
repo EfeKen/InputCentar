@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace InputCentar.Data
 {
-    public class NewsItemDatabase
+    public class DatabaseService
     {
         readonly SQLiteAsyncConnection _database;
 
-        public NewsItemDatabase(string dbPath)
+        public DatabaseService(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<NewsItem>().Wait();

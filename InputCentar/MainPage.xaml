@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InputCentar.MainPage"
              xmlns:local="clr-namespace:InputCentar"
@@ -24,29 +23,38 @@
                        TextColor="White"
                        Margin="10"/>
             </Grid>
-           <ScrollView>
-               <StackLayout Padding="20">
-                   <ListView ItemsSource="{Binding NewsItems}" HasUnevenRows="True">
-                       <ListView.ItemTemplate>
-                           <DataTemplate>
-                               <ViewCell>
-                                   <StackLayout Padding="10">
-                                       <Image Source="{Binding ImageUrl}" HeightRequest="200" Aspect="AspectFill"/>
-                                        <Label Text="{Binding Title}" FontSize="20" FontAttributes="Bold">
-                                            <Label.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding BindingContext.NewsTappedCommand, Source={x:Reference MainPage}}" CommandParameter="{Binding .}" />
-                                            </Label.GestureRecognizers>
-                                        </Label>
-                                        <Label Text="{Binding Description}" FontSize="15"/>
-                                       <Label Text="{Binding Date}" FontSize="12" TextColor="BlueViolet"/>
-                                    </StackLayout>
-                               </ViewCell>
-                           </DataTemplate>
-                       </ListView.ItemTemplate> 
-                   </ListView>
-               </StackLayout>
-           </ScrollView>
 
+            <!-- Add News Button -->
+            <Button Text="Add News" Clicked="AddNewsClicked" HorizontalOptions="Start" Margin="10"/>
+
+            <!-- Add News Form -->
+            <StackLayout x:Name="addNewsForm" Padding="10" IsVisible="False">
+                <Entry Placeholder="URL Image" Text="{Binding NewImageUrl}" />
+                <Entry Placeholder="Description" Text="{Binding NewDescription}" />
+                <Entry Placeholder="Title" Text="{Binding NewTitle}" />
+                <Button Text="Add" Clicked="AddClicked" HorizontalOptions="Start" Margin="10"/>
+            </StackLayout>
+
+            <ListView ItemsSource="{Binding NewsItems}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Image Source="{Binding ImageUrl}" HeightRequest="200" Aspect="AspectFill"/>
+                                <Label Text="{Binding Title}" FontSize="20" FontAttributes="Bold"/>
+                                <Label Text="{Binding Description}" FontSize="15"/>
+                                <Label Text="{Binding Date}" FontSize="12" TextColor="BlueViolet"/>
+                                <Button Text="Delete" Clicked="DeleteNewsClicked" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+           
+       
+            
         </StackLayout>
     </ScrollView>
 </ContentPage>

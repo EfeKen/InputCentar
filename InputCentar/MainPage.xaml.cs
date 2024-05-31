@@ -1,42 +1,37 @@
-﻿using Microsoft.Maui.Controls;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System;
 using InputCentar.ViewModels;
+using InputCentar.Models;
 
 namespace InputCentar
 {
     public partial class MainPage : ContentPage
     {
-
-
-
-        //private List<string> imageSources = new List<string> { "image1.jpg", "image2.jpg", "image3.jpg" };
-        // private int currentIndex = 0;
-
         public MainPage()
         {
             InitializeComponent();
-
-
-
-            /*   Task.Run(async () =>
-               {
-                   while (true)
-                   {
-
-                       await Task.Delay(5000); 
-                       currentIndex = (currentIndex + 1) % imageSources.Count;
-                       await mainImage.FadeTo(0, 250); 
-                       mainImage.Source = imageSources[currentIndex]; 
-                       await mainImage.FadeTo(1, 250); 
-                   }
-               });*/
         }
 
+        private void AddNewsClicked(object sender, EventArgs e)
+        {
+            ((NewsViewModel)BindingContext).NewTitle = string.Empty;
+            ((NewsViewModel)BindingContext).NewDescription = string.Empty;
+            ((NewsViewModel)BindingContext).NewImageUrl = string.Empty;
+            addNewsForm.IsVisible = !addNewsForm.IsVisible;
+        }
 
+        private async void AddClicked(object sender, EventArgs e)
+        {
+            await ((NewsViewModel)BindingContext).AddNewsItem();
+            addNewsForm.IsVisible = false;
+        }
+        private async void DeleteNewsClicked(object sender, System.EventArgs e)
+        {
+            // Retrieve the clicked news item from the binding context
+            var newsItem = ((Button)sender).BindingContext as NewsItem;
+
+            // Call the corresponding method in the view model to delete the news item
+            if (newsItem != null)
+                await ((NewsViewModel)BindingContext).DeleteNewsItem(newsItem);
+        }
     }
-
-
 }

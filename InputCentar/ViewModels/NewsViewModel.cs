@@ -1,65 +1,69 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using InputCentar.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
-using InputCentar.Models;
+
 
 namespace InputCentar.ViewModels
 {
-   public class NewsViewModel : INotifyPropertyChanged
+    public class NewsViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<NewsItem> NewsItems { get; set; }
-        public ICommand NewsTappedCommand { get; private set; }
+
+        // Properties for the new news item
+        public string NewTitle { get; set; }
+        public string NewDescription { get; set; }
+        public string NewImageUrl { get; set; }
 
         public NewsViewModel()
         {
-            NewsItems = new ObservableCollection<NewsItem>
-            {
-                new NewsItem
-                {
-                    Title = "Title 1",
-                    Description = "Description 1",
-                    ImageUrl = "image1.jpg",
-                    Date = DateTime.Now.ToString(),
-                    DetailText = "Detail Text 1"
-                },
-                new NewsItem
-                {
-                    Title = "Title 2",
-                    Description = "Description 2",
-                    ImageUrl = "image2.jpg",
-                    Date = DateTime.Now.ToString(),
-                    DetailText = "Detail Text 2"
-                },
-                new NewsItem
-                {
-                    Title = "Title 3",
-                    Description = "Description 3",
-                    ImageUrl = "image3.jpg",
-                    Date = DateTime.Now.ToString(),
-                    DetailText = "Detail Text 3"
-                }
-            };
-            NewsTappedCommand = new Command<NewsItem>(OnNewsTapped);
+            NewsItems = new ObservableCollection<NewsItem>();
+
+            // Load news items initially
+            Task.Run(async () => await LoadNewsItems());
         }
 
-        private async void OnNewsTapped(NewsItem newsItem)
+        private async Task LoadNewsItems()
+        {
+            var newsItemsFromDb = await App.Database.GetNewsItemsAsync();
+            NewsItems.Clear();
+            foreach (var item in newsItemsFromDb)
+            {
+                NewsItems.Add(item);
+            }
+        }
+
+        public async Task AddNewsItem()
+        {
+            var newItem = new NewsItem
+            {
+                Title = NewTitle,
+                Description = NewDescription,
+                ImageUrl = NewImageUrl,
+                Date = DateTime.Now.ToString(),
+                DetailText = "New Detail Text"
+            };
+            await App.Database.SaveNewsItemAsync(newItem);
+            NewsItems.Insert(0, newItem); // Insert at the beginning of the list
+
+            // Clear the fields after adding the news item
+            NewTitle = string.Empty;
+            NewDescription = string.Empty;
+            NewImageUrl = string.Empty;
+        }
+
+        public async Task DeleteNewsItem(NewsItem newsItem)
         {
             if (newsItem != null)
             {
-                var navigationParameter = new Dictionary<string, object>
-                {
-                    { "newsItem", newsItem }
-                };
-                await Shell.Current.GoToAsync(nameof(NewsPage), navigationParameter);
+                await App.Database.DeleteNewsItemAsync(newsItem);
+                NewsItems.Remove(newsItem);
             }
-        }
-        public event PropertyChangedEventHandler PropertyChanged;
 
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

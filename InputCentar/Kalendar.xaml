@@ -1,4 +1,4 @@
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+ï»¿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:InputCentar"
              x:Class="InputCentar.Kalendar">
@@ -38,10 +38,10 @@
 
     <ContentPage.Content>
         <StackLayout Padding="20" BackgroundColor="{StaticResource BackgroundColor}" HorizontalOptions="CenterAndExpand">
-            <Label Text="Zapoènite svoju rezervaciju!" FontSize="24" />
-            <Label Text="Odaberite datum poèetka" />
+            <Label Text="ZapoÄnite svoju rezervaciju!" FontSize="24" />
+            <Label Text="Odaberite datum poÄetka" />
             <DatePicker x:Name="startDatePicker" DateSelected="StartDateSelected" HorizontalOptions="CenterAndExpand" />
-            <Label Text="Odaberite datum završetka" />
+            <Label Text="Odaberite datum zavrÅ¡etka" />
             <DatePicker x:Name="endDatePicker" DateSelected="EndDateSelected" HorizontalOptions="CenterAndExpand" />
             <Button Text="Rezerviraj" Clicked="MakeReservationClicked" />
         </StackLayout>

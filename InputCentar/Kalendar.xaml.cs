@@ -29,11 +29,11 @@ namespace InputCentar
             if (startDate < endDate)
             {
                 // Make reservation for the selected date range
-                DisplayAlert("Reservation", $"Reservation made from {startDate.ToShortDateString()} to {endDate.ToShortDateString()}", "OK");
+                DisplayAlert("Rezervacija", $"Uspješno ste rezervisali od {startDate.ToShortDateString()} do {endDate.ToShortDateString()}", "OK");
             }
             else
             {
-                DisplayAlert("Error", "End date must be after start date", "OK");
+                DisplayAlert("Error", "Datum završetka mora biti poslije datuma poèetka", "OK");
             }
         }
     }

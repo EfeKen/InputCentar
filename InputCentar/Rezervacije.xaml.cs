@@ -40,6 +40,10 @@ namespace InputCentar
                 }
             }
         }
+        private async void LoadItemList(List<string> items)
+        {
+            await Navigation.PushAsync(new Kalendar());
+        }
         private void IconTapped(object sender, EventArgs e)
         {
             // Handle the tap event here 

@@ -1,15 +1,49 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:InputCentar"
              x:Class="InputCentar.Kalendar">
 
+    <ContentPage.Resources>
+        <!-- Define some colors for the page -->
+        <Color x:Key="PrimaryColor">#4CAF50</Color>
+        <Color x:Key="BackgroundColor">#F5F5F5</Color>
+        <Color x:Key="TextColor">#212121</Color>
+
+        <!-- Define a style for labels -->
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            <Setter Property="Margin" Value="0,0,0,10" />
+        </Style>
+
+        <!-- Define a style for date pickers -->
+        <Style TargetType="DatePicker">
+            <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
+            <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+            <Setter Property="Margin" Value="0,0,0,20" />
+            <Setter Property="HeightRequest" Value="40" />
+        </Style>
+
+        <!-- Define a style for the button -->
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Margin" Value="0,20,0,0" />
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="CornerRadius" Value="25" />
+        </Style>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Label Text="Reservation Calendar" FontSize="24" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20" />
-            <Label Text="Izaberite datum pocetka rezervacije" FontSize="24" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20" />
-            <DatePicker x:Name="startDatePicker" DateSelected="StartDateSelected" />
-            <Label Text="Izaberite datum kraja rezervacije" FontSize="24" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20" />
-            <DatePicker x:Name="endDatePicker" DateSelected="EndDateSelected" />
-            <Button Text="Make Reservation" Clicked="MakeReservationClicked" />
+        <StackLayout Padding="20" BackgroundColor="{StaticResource BackgroundColor}" HorizontalOptions="CenterAndExpand">
+            <Label Text="Zapoènite svoju rezervaciju!" FontSize="24" />
+            <Label Text="Odaberite datum poèetka" />
+            <DatePicker x:Name="startDatePicker" DateSelected="StartDateSelected" HorizontalOptions="CenterAndExpand" />
+            <Label Text="Odaberite datum završetka" />
+            <DatePicker x:Name="endDatePicker" DateSelected="EndDateSelected" HorizontalOptions="CenterAndExpand" />
+            <Button Text="Rezerviraj" Clicked="MakeReservationClicked" />
         </StackLayout>
     </ContentPage.Content>
 

@@ -8,25 +8,12 @@
             Text="Postavite pitanje"
             FontSize="24"
             FontAttributes="Bold"
-            Margin="20"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Frame
-            BorderColor="Black"
-            CornerRadius="20"
-            Margin="16">
-            <VerticalStackLayout>
-                <Editor 
-                    Placeholder="Upišite pitanje ovdje"
-                    AutoSize="TextChanges"
-                    HeightRequest="160"/>
-                <Button Text="Pošalji" Margin="20" Clicked="Button_Clicked"/>
-            </VerticalStackLayout>
-        </Frame>
+            Margin="60"
+            HorizontalOptions="Center"/>
+        <Button Text="Kliknite ovdje" Margin="20" Padding="20" CornerRadius="20" Clicked="Button_Clicked"/>
         <Image Source="logo.png"
-               Margin="20"
+               Margin="60"
                Aspect="AspectFit"
-               HeightRequest="50"
-               HorizontalOptions="Center"/>
+               HeightRequest="50"/>
     </VerticalStackLayout>
 </ContentPage>

@@ -25,6 +25,7 @@ namespace InputCentar
                     database = new DatabaseService(dbPath);
                 }
                 return database;
+
             }
         }
 

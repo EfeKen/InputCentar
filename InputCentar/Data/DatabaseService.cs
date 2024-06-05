@@ -11,6 +11,13 @@ namespace InputCentar.Data
     {
         readonly SQLiteAsyncConnection _database;
 
+        public Task<User> GetUserByUsernameAndPasswordAsync(string username, string password)
+        {
+            return _database.Table<User>()
+                            .Where(u => u.Username == username && u.Password == password)
+                            .FirstOrDefaultAsync();
+        }
+
         public DatabaseService(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);

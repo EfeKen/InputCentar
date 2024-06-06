@@ -24,6 +24,7 @@ namespace InputCentar
 
             await App.Database.SaveUserAsync(user);
             await DisplayAlert("Success", "User registered successfully", "OK");
+            await Navigation.PushAsync(new LoginPage());
         }
 
         private void Prijava_Clicked(object sender, EventArgs e)

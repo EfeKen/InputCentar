@@ -8,7 +8,12 @@
             Text="Postavite pitanje"
             FontSize="24"
             FontAttributes="Bold"
-            Margin="60"
+            Margin="20"
+            HorizontalOptions="Center"/>
+        <Label
+            Text="Postavite nam pitanje koristeći Google Forms pritiskom na dugme ispod"
+            FontSize="20"
+            Margin="20"
             HorizontalOptions="Center"/>
         <Button Text="Kliknite ovdje" Margin="20" Padding="20" CornerRadius="20" Clicked="Button_Clicked"/>
         <Image Source="logo.png"

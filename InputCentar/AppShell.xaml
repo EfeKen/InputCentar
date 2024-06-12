@@ -60,5 +60,10 @@
             Route="LoginPage"/>
     </FlyoutItem>
 
+    <FlyoutItem Title="PROFIL" IsVisible="{Binding IsUserLoggedIn}">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:ProfilPage}"
+            Route="ProfilPage"/>
+    </FlyoutItem>
 
 </Shell>

@@ -40,10 +40,10 @@ namespace InputCentar.Data
                 adminUser = new User
                 {
                     FirstName = "Admin",
-                    LastName = "User",
-                    Username = "admin",
+                    LastName = "Admincic",
+                    Username = "admin1",
                     Email = "admin@example.com",
-                    Password = "admin", // Note: In a real app, hash and salt the password
+                    Password = "1234",
                     Role = UserRoles.Admin
                 };
                 await SaveUserAsync(adminUser);
@@ -79,11 +79,12 @@ namespace InputCentar.Data
         }
 
         // User methods
+        //ispisivanje korisnika iz liste 
         public Task<List<User>> GetUsersAsync()
         {
             return _database.Table<User>().ToListAsync();
         }
-
+        //pretaga pojedinacnog  korisnika
         public Task<User> GetUserAsync(int id)
         {
             return _database.Table<User>().Where(i => i.Id == id).FirstOrDefaultAsync();

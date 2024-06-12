@@ -1,4 +1,5 @@
 ﻿using InputCentar.Data;
+using InputCentar.ViewModels;
 using System;
 using System.IO;
 
@@ -8,10 +9,16 @@ namespace InputCentar
     public partial class App : Application
     {
         static DatabaseService database;
+        public AppShellViewModel AppShellViewModel { get; private set; }
+
+        public static User CurrentUser { get; set; }
 
         public App()
         {
             InitializeComponent();
+            AppShellViewModel = new AppShellViewModel();
+            var appShell = new AppShell();
+            appShell.BindingContext = AppShellViewModel;
             MainPage = new AppShell(); // Ensure your AppShell.xaml is set up correctly
         }
 
@@ -28,6 +35,8 @@ namespace InputCentar
 
             }
         }
+
+     
 
         protected override void OnStart()
         {

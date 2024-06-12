@@ -12,6 +12,7 @@ namespace InputCentar.ViewModels
     public class UserViewModel : User
     {
         private readonly DatabaseService _databaseService;
+    
         public ObservableCollection<User> Users { get; set; }
 
         public UserViewModel(DatabaseService databaseService)
@@ -32,9 +33,11 @@ namespace InputCentar.ViewModels
 
         public async Task AddUser(User user)
         {
+            user.Role = UserRoles.User; // Set role to User (0)
             await _databaseService.SaveUserAsync(user);
             Users.Add(user);
         }
+
 
         public async Task DeleteUser(User user)
         {

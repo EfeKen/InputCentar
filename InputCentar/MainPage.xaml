@@ -24,10 +24,11 @@
                        Margin="10"/>
             </Grid>
 
-            <!-- Add News Button -->
-            <Button Text="Add News" Clicked="AddNewsClicked" HorizontalOptions="Start" Margin="10"/>
+            <!-- Add News Button (Visible to Admin only) -->
+            <Button Text="Add News" Clicked="AddNewsClicked" HorizontalOptions="Start" Margin="10"
+                    IsVisible="{Binding Source={x:Reference MainPage}, Path=IsAdmin}" />
 
-            <!-- Add News Form -->
+            <!-- Add News Form (Visible to Admin only) -->
             <StackLayout x:Name="addNewsForm" Padding="10" IsVisible="False">
                 <Entry Placeholder="URL Image" Text="{Binding NewImageUrl}" />
                 <Entry Placeholder="Description" Text="{Binding NewDescription}" />
@@ -44,17 +45,14 @@
                                 <Label Text="{Binding Title}" FontSize="20" FontAttributes="Bold"/>
                                 <Label Text="{Binding Description}" FontSize="15"/>
                                 <Label Text="{Binding Date}" FontSize="12" TextColor="BlueViolet"/>
-                                <Button Text="Delete" Clicked="DeleteNewsClicked" />
+                                <!-- Delete Button (Visible to Admin only) -->
+                                <Button Text="Delete" Clicked="DeleteNewsClicked"
+                                        IsVisible="{Binding Source={x:Reference MainPage}, Path=IsAdmin}" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
-
-           
-       
-            
         </StackLayout>
     </ScrollView>
 </ContentPage>

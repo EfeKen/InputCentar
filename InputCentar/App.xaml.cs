@@ -2,17 +2,19 @@
 using System;
 using System.IO;
 
-
 namespace InputCentar
 {
     public partial class App : Application
     {
         static DatabaseService database;
 
+        public static User CurrentUser { get; set; } // Currently logged-in user
+        public static UserRoles CurrentUserRole { get; set; } = UserRoles.Visitor; // Default to visitor
+
         public App()
         {
             InitializeComponent();
-            MainPage = new AppShell(); // Ensure your AppShell.xaml is set up correctly
+            MainPage = new NavigationPage(new MainPage());
         }
 
         public static DatabaseService Database
@@ -25,20 +27,20 @@ namespace InputCentar
                     database = new DatabaseService(dbPath);
                 }
                 return database;
-
             }
         }
 
-        protected override void OnStart()
+        public static void Logout()
         {
+            CurrentUser = null;
+            CurrentUserRole = UserRoles.Visitor; // Set role to visitor on logout
+            Application.Current.MainPage = new NavigationPage(new MainPage());
         }
 
-        protected override void OnSleep()
-        {
-        }
+        protected override void OnStart() { }
 
-        protected override void OnResume()
-        {
-        }
+        protected override void OnSleep() { }
+
+        protected override void OnResume() { }
     }
 }

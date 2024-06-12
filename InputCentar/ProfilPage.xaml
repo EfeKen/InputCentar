@@ -1,0 +1,25 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InputCentar.ProfilPage"
+             xmlns:viewModels="clr-namespace:InputCentar.ViewModels">
+
+    <ContentPage.BindingContext>
+        <viewModels:ProfilViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="10">
+        <Label Text="Users" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+        <ListView ItemsSource="{Binding Users}" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Username}" FontSize="20" FontAttributes="Bold"/>
+                            <Label Text="{Binding Role}" FontSize="15"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

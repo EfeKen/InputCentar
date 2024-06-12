@@ -7,7 +7,7 @@
         <Grid RowDefinitions="1*,8*,1*">
             <!-- Frame and layout code omitted for brevity -->
             <Frame BackgroundColor="{x:StaticResource Blue300Accent}"
-         Grid.Row="1" VerticalOptions="CenterAndExpand" Margin="0,0,40,0">
+                   Grid.Row="1" VerticalOptions="CenterAndExpand" Margin="0,0,40,0">
                 <VerticalStackLayout Spacing="25">
                     <Label Text="REGISTRUJ SE" FontSize="28" FontAttributes="Bold"/>
                     <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">

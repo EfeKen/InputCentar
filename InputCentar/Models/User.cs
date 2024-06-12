@@ -10,9 +10,9 @@ namespace InputCentar
 {
     public enum UserRoles
     {
-        Admin,
-        User,
-        Visitor
+        Admin = 1,
+        User = 0,
+        Visitor =2
     }
     public class User
     {

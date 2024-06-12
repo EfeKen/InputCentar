@@ -1,5 +1,6 @@
 using System;
 using Microsoft.Maui.Controls;
+using InputCentar.Models;
 
 namespace InputCentar
 {
@@ -19,7 +20,9 @@ namespace InputCentar
 
             if (user != null)
             {
+                App.CurrentUser = user;
                 await DisplayAlert("Success", "Login successful", "OK");
+
                 // Navigate to the main page or another page
                 Application.Current.MainPage = new AppShell();
             }

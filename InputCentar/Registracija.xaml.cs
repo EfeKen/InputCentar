@@ -1,13 +1,17 @@
 using System;
 using Microsoft.Maui.Controls;
+using InputCentar.ViewModels;
 
 namespace InputCentar
 {
     public partial class Registracija : ContentPage
     {
+        private readonly UserViewModel _userViewModel;
+
         public Registracija()
         {
             InitializeComponent();
+            _userViewModel = new UserViewModel(App.Database); // Assuming App.Database is an instance of DatabaseService
         }
 
         private async void OnRegisterClicked(object sender, EventArgs e)
@@ -19,12 +23,12 @@ namespace InputCentar
                 Username = usernameEntry.Text,
                 Email = emailEntry.Text,
                 Password = passwordEntry.Text, // Note: Hash and salt the password in a real app
-                Role = UserRoles.User
+                Role = UserRoles.User // Set role to User (0)
             };
 
-            await App.Database.SaveUserAsync(user);
+            await _userViewModel.AddUser(user);
             await DisplayAlert("Success", "User registered successfully", "OK");
-            await Navigation.PushAsync(new LoginPage());
+            await Navigation.PopAsync(); // Navigate back to the login page or another page
         }
 
         private void Prijava_Clicked(object sender, EventArgs e)

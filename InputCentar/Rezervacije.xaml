@@ -9,58 +9,28 @@
 
     <StackLayout Orientation="Vertical">
 
-        <!-- Horizontal Scrollable Segment -->
-        <ScrollView Orientation="Horizontal">
-
-            <!-- Wrap the Frame elements inside a StackLayout -->
-            <StackLayout Orientation="Horizontal">
-                <Frame BackgroundColor="#F2F2F2" Padding="5" CornerRadius="10" HasShadow="True" Margin="5" HeightRequest="70" WidthRequest="70">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="IconTapped" />
-                    </Frame.GestureRecognizers>
-                    <Image Source="it.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" />
-                </Frame>
-
-                <Frame BackgroundColor="#F2F2F2" Padding="5" CornerRadius="10" HasShadow="True" Margin="5" HeightRequest="70" WidthRequest="70">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Icon1Tapped" />
-                    </Frame.GestureRecognizers>
-                    <Image Source="book.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" />
-                </Frame>
-
-                <Frame BackgroundColor="#F2F2F2" Padding="5" CornerRadius="10" HasShadow="True" Margin="5" HeightRequest="70" WidthRequest="70">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Icon2Tapped" />
-                    </Frame.GestureRecognizers>
-                    <Image Source="cpu.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" />
-                </Frame>
-
-                <Frame BackgroundColor="#F2F2F2" Padding="5" CornerRadius="10" HasShadow="True" Margin="5" HeightRequest="70" WidthRequest="70">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Icon3Tapped" />
-                    </Frame.GestureRecognizers>
-                    <Image Source="office.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" />
-                </Frame>
-
-                <Frame BackgroundColor="#F2F2F2" Padding="5" CornerRadius="10" HasShadow="True" Margin="5" HeightRequest="70" WidthRequest="70">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Icon4Tapped" />
-                    </Frame.GestureRecognizers>
-                    <Image Source="stem.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" />
-                </Frame>
-                <Frame BackgroundColor="#F2F2F2" Padding="5" CornerRadius="10" HasShadow="True" Margin="5" HeightRequest="70" WidthRequest="70">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Icon5Tapped" />
-                    </Frame.GestureRecognizers>
-                    <Image Source="creativity.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" />
-                </Frame>
-            </StackLayout>
-
-        </ScrollView>
-
         <!-- Your Content Below -->
-        <StackLayout x:Name="Default" >
-            <Label Text="Ovdje se iznajmljuje sve!"/>
+        <StackLayout Padding="10">
+
+            <!-- List view to display multiple items -->
+            <ListView x:Name="RezervacijeListView" ItemsSource="{Binding Rezervacije}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <!-- Labels to display Firestore data for each item -->
+                                <Label Text="{Binding Naziv}" FontSize="Large" />
+                                <Label Text="{Binding Slika}" FontSize="Large" />
+                                <Label Text="{Binding Grupa}" FontSize="Large" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Example for a Button to trigger loading of data -->
+            <Button Text="Load Rezervacije" Clicked="LoadRezervacijeButton_Clicked" />
+
         </StackLayout>
 
     </StackLayout>

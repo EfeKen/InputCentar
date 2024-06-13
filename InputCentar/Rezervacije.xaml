@@ -6,7 +6,7 @@
     <Shell.TitleView>
         <inputCentar:LogoTileView/>
     </Shell.TitleView>
-
+    <ScrollView>
     <StackLayout Orientation="Vertical">
 
         <!-- Your Content Below -->
@@ -20,7 +20,8 @@
                             <StackLayout Padding="10">
                                 <!-- Labels to display Firestore data for each item -->
                                 <Label Text="{Binding Naziv}" FontSize="Large" />
-                                <Label Text="{Binding Slika}" FontSize="Large" />
+                                <Image Source="{Binding Slika}" Width="200" Height="200" />
+
                                 <Label Text="{Binding Grupa}" FontSize="Large" />
                             </StackLayout>
                         </ViewCell>
@@ -34,5 +35,6 @@
         </StackLayout>
 
     </StackLayout>
+    </ScrollView>
 
 </ContentPage>

@@ -1,6 +1,7 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InputCentar.MainPage"
+             x:Name="mainPage"
              xmlns:local="clr-namespace:InputCentar"
              xmlns:viewModels="clr-namespace:InputCentar.ViewModels">
 
@@ -26,9 +27,9 @@
 
             <!-- Add News Button (Visible to Admin only) -->
             <Button Text="Add News" Clicked="AddNewsClicked" HorizontalOptions="Start" Margin="10"
-                    IsVisible="{Binding Source={x:Reference MainPage}, Path=IsAdmin}" />
+                    IsVisible="{Binding Source={x:Reference mainPage}, Path=IsAdmin}" />
 
-            <!-- Add News Form (Visible to Admin only) -->
+            <!-- Add News Form -->
             <StackLayout x:Name="addNewsForm" Padding="10" IsVisible="False">
                 <Entry Placeholder="URL Image" Text="{Binding NewImageUrl}" />
                 <Entry Placeholder="Description" Text="{Binding NewDescription}" />
@@ -47,11 +48,11 @@
                                 <Label Text="{Binding Date}" FontSize="12" TextColor="BlueViolet"/>
                                 <!-- Delete Button (Visible to Admin only) -->
                                 <Button Text="Delete" Clicked="DeleteNewsClicked"
-                                        IsVisible="{Binding Source={x:Reference MainPage}, Path=IsAdmin}" />
+                                        IsVisible="{Binding Source={x:Reference mainPage}, Path=IsAdmin}" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
-                </ListView.ItemTemplate>
+            </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
     </ScrollView>

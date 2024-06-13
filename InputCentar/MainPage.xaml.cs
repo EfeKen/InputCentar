@@ -1,18 +1,32 @@
 ﻿using System;
+using System.ComponentModel;
 using InputCentar.ViewModels;
 using InputCentar.Models;
 using Microsoft.Maui.Controls;
 
 namespace InputCentar
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : ContentPage, INotifyPropertyChanged
     {
-        public bool IsAdmin { get; set; }
+        private bool isAdmin;
+        public bool IsAdmin
+        {
+            get => isAdmin;
+            set
+            {
+                if (isAdmin != value)
+                {
+                    isAdmin = value;
+                    OnPropertyChanged(nameof(IsAdmin));
+                }
+            }
+        }
 
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = new NewsViewModel();
+            // Set the BindingContext for NewsViewModel
+            this.BindingContext = new NewsViewModel();
         }
 
         protected override void OnAppearing()
@@ -20,6 +34,7 @@ namespace InputCentar
             base.OnAppearing();
             // Update IsAdmin based on the current user role
             IsAdmin = App.CurrentUser?.Role == UserRoles.Admin;
+            // Notify UI of property change
             OnPropertyChanged(nameof(IsAdmin));
         }
 
@@ -27,9 +42,10 @@ namespace InputCentar
         {
             if (IsAdmin)
             {
-                ((NewsViewModel)BindingContext).NewTitle = string.Empty;
-                ((NewsViewModel)BindingContext).NewDescription = string.Empty;
-                ((NewsViewModel)BindingContext).NewImageUrl = string.Empty;
+                var viewModel = (NewsViewModel)this.BindingContext;
+                viewModel.NewTitle = string.Empty;
+                viewModel.NewDescription = string.Empty;
+                viewModel.NewImageUrl = string.Empty;
                 addNewsForm.IsVisible = !addNewsForm.IsVisible;
             }
             else
@@ -46,7 +62,8 @@ namespace InputCentar
                 return;
             }
 
-            await ((NewsViewModel)BindingContext).AddNewsItem();
+            var viewModel = (NewsViewModel)this.BindingContext;
+            await viewModel.AddNewsItem();
             addNewsForm.IsVisible = false;
         }
 
@@ -60,7 +77,17 @@ namespace InputCentar
 
             var newsItem = ((Button)sender).BindingContext as NewsItem;
             if (newsItem != null)
-                await ((NewsViewModel)BindingContext).DeleteNewsItem(newsItem);
+            {
+                var viewModel = (NewsViewModel)this.BindingContext;
+                await viewModel.DeleteNewsItem(newsItem);
+            }
+        }
+
+        public new event PropertyChangedEventHandler PropertyChanged;
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            base.OnPropertyChanged(propertyName);
         }
     }
 }

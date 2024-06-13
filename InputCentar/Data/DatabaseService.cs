@@ -39,11 +39,11 @@ namespace InputCentar.Data
             {
                 adminUser = new User
                 {
-                    FirstName = "Admin",
-                    LastName = "Admincic",
-                    Username = "admin1",
-                    Email = "admin@example.com",
-                    Password = "1234",
+                    FirstName = "Admin2",
+                    LastName = "Novi",
+                    Username = "adm",
+                    Email = "admin22@example.com",
+                    Password = "123456",
                     Role = UserRoles.Admin
                 };
                 await SaveUserAsync(adminUser);

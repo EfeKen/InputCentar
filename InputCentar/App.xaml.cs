@@ -36,13 +36,6 @@ namespace InputCentar
 
      
 
-        protected override void OnStart()
-        {
-            CurrentUser = null;
-            CurrentUserRole = UserRoles.Visitor; // Set role to visitor on logout
-            Application.Current.MainPage = new NavigationPage(new MainPage());
-        }
-
         protected override void OnStart() { }
 
         protected override void OnSleep() { }

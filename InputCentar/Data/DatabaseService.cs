@@ -1,110 +1,40 @@
-﻿using InputCentar.Models;
-using SQLite;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.IO;
-using InputCentar.ViewModels;
+﻿using System.Threading.Tasks;
+using Firebase.Auth;
+using InputCentar.Models;
 
 namespace InputCentar.Data
 {
     public class DatabaseService
     {
-        readonly SQLiteAsyncConnection _database;
+        private readonly FirebaseAuthProvider _firebaseAuthProvider;
 
-        public Task<User> GetUserByUsernameAndPasswordAsync(string username, string password)
+        public DatabaseService()
         {
-            return _database.Table<User>()
-                            .Where(u => u.Username == username && u.Password == password)
-                            .FirstOrDefaultAsync();
+            // Initialize Firebase Authentication provider
+            _firebaseAuthProvider = new FirebaseAuthProvider(new FirebaseConfig("AIzaSyBxOUDFDWHXLX-CJZXq2AF3xHHZn-TJ2rA"));
         }
 
-        public DatabaseService(string dbPath)
+        public async Task<User> GetUserByUsernameAndPasswordAsync(string username, string password)
         {
-            _database = new SQLiteAsyncConnection(dbPath);
-            InitializeDatabase();
-        }
-
-        private async void InitializeDatabase()
-        {
-            await _database.CreateTableAsync<NewsItem>();
-            await _database.CreateTableAsync<User>();
-
-            await InsertAdminUserIfNotExists();
-        }
-
-        private async Task InsertAdminUserIfNotExists()
-        {
-            var adminUser = await _database.Table<User>().Where(u => u.Role == UserRoles.Admin).FirstOrDefaultAsync();
-            if (adminUser == null)
+            try
             {
-                adminUser = new User
+                // Authenticate user with Firebase Authentication
+                var authResult = await _firebaseAuthProvider.SignInWithEmailAndPasswordAsync(username, password);
+
+                // If authentication is successful, create a new User object
+                var user = new User
                 {
-                    FirstName = "Admin2",
-                    LastName = "Novi",
-                    Username = "adm",
-                    Email = "admin22@example.com",
-                    Password = "123456",
-                    Role = UserRoles.Admin
+                    Username = username,
+                    // Add any additional user properties you want to populate from Firebase
                 };
-                await SaveUserAsync(adminUser);
+
+                return user;
             }
-        }
-
-        // NewsItem methods
-        public Task<List<NewsItem>> GetNewsItemsAsync()
-        {
-            return _database.Table<NewsItem>().ToListAsync();
-        }
-
-        public Task<NewsItem> GetNewsItemAsync(int id)
-        {
-            return _database.Table<NewsItem>().Where(i => i.Id == id).FirstOrDefaultAsync();
-        }
-
-        public Task<int> SaveNewsItemAsync(NewsItem item)
-        {
-            if (item.Id != 0)
+            catch (FirebaseAuthException)
             {
-                return _database.UpdateAsync(item);
+                // If authentication fails, return null
+                return null;
             }
-            else
-            {
-                return _database.InsertAsync(item);
-            }
-        }
-
-        public Task<int> DeleteNewsItemAsync(NewsItem item)
-        {
-            return _database.DeleteAsync(item);
-        }
-
-        // User methods
-        //ispisivanje korisnika iz liste 
-        public Task<List<User>> GetUsersAsync()
-        {
-            return _database.Table<User>().ToListAsync();
-        }
-        //pretaga pojedinacnog  korisnika
-        public Task<User> GetUserAsync(int id)
-        {
-            return _database.Table<User>().Where(i => i.Id == id).FirstOrDefaultAsync();
-        }
-
-        public Task<int> SaveUserAsync(User user)
-        {
-            if (user.Id != 0)
-            {
-                return _database.UpdateAsync(user);
-            }
-            else
-            {
-                return _database.InsertAsync(user);
-            }
-        }
-
-        public Task<int> DeleteUserAsync(User user)
-        {
-            return _database.DeleteAsync(user);
         }
     }
 }

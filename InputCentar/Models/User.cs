@@ -23,5 +23,6 @@ namespace InputCentar
         public string Email { get; set; }
         public string Password { get; set; }
         public UserRoles Role { get; set; }
+        public string FirebaseUserId { get; internal set; }
     }
 }

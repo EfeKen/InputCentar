@@ -19,29 +19,29 @@ namespace InputCentar.ViewModels
         {
             _databaseService = databaseService;
             Users = new ObservableCollection<User>();
-            LoadUsers();
+           // LoadUsers();
         }
 
-        private async void LoadUsers()
+       /* private async void LoadUsers()
         {
-            var users = await _databaseService.GetUsersAsync();
+           // var users = await _databaseService.GetUsersAsync();
             foreach (var user in users)
             {
                 Users.Add(user);
             }
-        }
+        }*/
 
         public async Task AddUser(User user)
         {
             user.Role = UserRoles.User; // Set role to User (0)
-            await _databaseService.SaveUserAsync(user);
+            //await _databaseService.SaveUserAsync(user);
             Users.Add(user);
         }
 
 
         public async Task DeleteUser(User user)
         {
-            await _databaseService.DeleteUserAsync(user);
+          //  await _databaseService.DeleteUserAsync(user);
             Users.Remove(user);
         }
     }

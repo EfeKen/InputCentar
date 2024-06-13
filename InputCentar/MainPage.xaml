@@ -1,59 +1,21 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="InputCentar.MainPage"
-             x:Name="mainPage"
-             xmlns:local="clr-namespace:InputCentar"
-             xmlns:viewModels="clr-namespace:InputCentar.ViewModels">
+             x:Class="InputCentar.MainPage">
 
-    <Shell.TitleView>
-        <local:LogoTileView/>
-    </Shell.TitleView>
-
-    <ContentPage.BindingContext>
-        <viewModels:NewsViewModel/>
-    </ContentPage.BindingContext>
-
-    <ScrollView>
-        <StackLayout>
-            <Grid>
-                <Image x:Name="mainImage" Source="image1.jpg" Aspect="AspectFill" VerticalOptions="Start" HeightRequest="300"/>
-                <Label Text="INPUT Centar" 
-                       FontSize="30" FontAttributes="Bold" 
-                       FontFamily="Arial"
-                       HorizontalOptions="Start" VerticalOptions="Start" 
-                       TextColor="White"
-                       Margin="10"/>
-            </Grid>
-
-            <!-- Add News Button (Visible to Admin only) -->
-            <Button Text="Add News" Clicked="AddNewsClicked" HorizontalOptions="Start" Margin="10"
-                    IsVisible="{Binding Source={x:Reference mainPage}, Path=IsAdmin}" />
-
-            <!-- Add News Form -->
-            <StackLayout x:Name="addNewsForm" Padding="10" IsVisible="False">
-                <Entry Placeholder="URL Image" Text="{Binding NewImageUrl}" />
-                <Entry Placeholder="Description" Text="{Binding NewDescription}" />
-                <Entry Placeholder="Title" Text="{Binding NewTitle}" />
-                <Button Text="Add" Clicked="AddClicked" HorizontalOptions="Start" Margin="10"/>
-            </StackLayout>
-
-            <ListView ItemsSource="{Binding NewsItems}" HasUnevenRows="True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Padding="10">
-                                <Image Source="{Binding ImageUrl}" HeightRequest="200" Aspect="AspectFill"/>
-                                <Label Text="{Binding Title}" FontSize="20" FontAttributes="Bold"/>
-                                <Label Text="{Binding Description}" FontSize="15"/>
-                                <Label Text="{Binding Date}" FontSize="12" TextColor="BlueViolet"/>
-                                <!-- Delete Button (Visible to Admin only) -->
-                                <Button Text="Delete" Clicked="DeleteNewsClicked"
-                                        IsVisible="{Binding Source={x:Reference mainPage}, Path=IsAdmin}" />
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
+    <StackLayout>
+        <ListView ItemsSource="{Binding NewsItems}" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Image Source="{Binding ImageUrl}" WidthRequest="100" HeightRequest="100" Aspect="AspectFill" />
+                            <Label Text="{Binding Title}" FontAttributes="Bold" />
+                            <Label Text="{Binding Description}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
             </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ScrollView>
+        </ListView>
+    </StackLayout>
+
 </ContentPage>

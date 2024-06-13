@@ -1,66 +1,53 @@
-﻿using InputCentar.Models;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Threading.Tasks;
-
+using Google.Cloud.Firestore;
+using InputCentar.Models;
 
 namespace InputCentar.ViewModels
 {
     public class NewsViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<NewsItem> NewsItems { get; set; }
+        private readonly FirestoreDb _firestoreDb;
 
-        // Properties for the new news item
-        public string NewTitle { get; set; }
-        public string NewDescription { get; set; }
-        public string NewImageUrl { get; set; }
+        private ObservableCollection<NewsItem> _newsItems;
+        public ObservableCollection<NewsItem> NewsItems
+        {
+            get { return _newsItems; }
+            set
+            {
+                _newsItems = value;
+                OnPropertyChanged(nameof(NewsItems));
+            }
+        }
 
         public NewsViewModel()
         {
+            System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "C:\\Users\\STEM8\\source\\repos\\InputCentar\\InputCentar\\Platforms\\Android\\google-services\\inputapp-870db-firebase-adminsdk-3axmc-fcd0e0d53f.json");
+
+            _firestoreDb = FirestoreDb.Create("inputapp-870db");
+
             NewsItems = new ObservableCollection<NewsItem>();
 
             // Load news items initially
             Task.Run(async () => await LoadNewsItems());
         }
 
-        private async Task LoadNewsItems()
+        public async Task LoadNewsItems()
         {
-            var newsItemsFromDb = await App.Database.GetNewsItemsAsync();
-            NewsItems.Clear();
-            foreach (var item in newsItemsFromDb)
+            CollectionReference vijestiRef = _firestoreDb.Collection("Vijesti");
+            QuerySnapshot querySnapshot = await vijestiRef.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot documentSnapshot in querySnapshot.Documents)
             {
-                NewsItems.Add(item);
+                Dictionary<string, object> newsData = documentSnapshot.ToDictionary();
+                string naslov = newsData["Naslov"].ToString();
+                string slika = newsData["Slika"].ToString();
+
+                // Add the retrieved news item to the NewsItems collection
+               // NewsItems.Add(new NewsItem { Title = naslov, ImageUrl = slika });
             }
-        }
-
-        public async Task AddNewsItem()
-        {
-            var newItem = new NewsItem
-            {
-                Title = NewTitle,
-                Description = NewDescription,
-                ImageUrl = NewImageUrl,
-                Date = DateTime.Now.ToString(),
-                DetailText = "New Detail Text"
-            };
-            await App.Database.SaveNewsItemAsync(newItem);
-            NewsItems.Insert(0, newItem); // Insert at the beginning of the list
-
-            // Clear the fields after adding the news item
-            NewTitle = string.Empty;
-            NewDescription = string.Empty;
-            NewImageUrl = string.Empty;
-        }
-
-        public async Task DeleteNewsItem(NewsItem newsItem)
-        {
-            if (newsItem != null)
-            {
-                await App.Database.DeleteNewsItemAsync(newsItem);
-                NewsItems.Remove(newsItem);
-            }
-
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

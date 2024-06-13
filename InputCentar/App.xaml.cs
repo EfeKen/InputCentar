@@ -28,7 +28,7 @@ namespace InputCentar
                 if (database == null)
                 {
                     var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "InputCentar.db3");
-                    database = new DatabaseService(dbPath);
+                    database = new DatabaseService();
                 }
                 return database;
             }

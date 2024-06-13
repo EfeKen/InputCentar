@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "601220338684",
+    "project_id": "inputapp-870db",
+    "storage_bucket": "inputapp-870db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601220338684:android:11c5fc543e71412ea79879",
+        "android_client_info": {
+          "package_name": "com.InputCentar.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxOUDFDWHXLX-CJZXq2AF3xHHZn-TJ2rA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

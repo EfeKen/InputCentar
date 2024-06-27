@@ -1,40 +1,78 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:inputCentar="using:InputCentar"
              x:Class="InputCentar.Rezervacije">
 
-    <Shell.TitleView>
-        <inputCentar:LogoTileView/>
-    </Shell.TitleView>
     <ScrollView>
-    <StackLayout Orientation="Vertical">
+        <Grid VerticalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <!-- Row for cards -->
+                <RowDefinition Height="Auto" />
+                <!-- Row for ListView -->
+                <RowDefinition Height="Auto" />
+                <!-- Row for button -->
+            </Grid.RowDefinitions>
 
-        <!-- Your Content Below -->
-        <StackLayout Padding="10">
+            <!-- Cards with pictures from assets -->
+            <Grid Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10" ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-            <!-- List view to display multiple items -->
-            <ListView x:Name="RezervacijeListView" ItemsSource="{Binding Rezervacije}" HasUnevenRows="True">
+                <Frame x:Name="ProstorijeCard" CornerRadius="10" Padding="10" BackgroundColor="LightGray">
+                    <StackLayout>
+                        <Label Text="Prostorije" FontSize="Medium" HorizontalOptions="Center" />
+                        <Image Source="office.png" WidthRequest="100" HeightRequest="100" Aspect="AspectFill" />
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCardTapped" CommandParameter="Prostorije" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame x:Name="ElektronikaCard" CornerRadius="10" Padding="10" BackgroundColor="LightGray" Grid.Column="1">
+                    <StackLayout>
+                        <Label Text="Elektronika" FontSize="Medium" HorizontalOptions="Center" />
+                        <Image Source="cpu.png" WidthRequest="100" HeightRequest="100" Aspect="AspectFill" />
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCardTapped" CommandParameter="Elektronika" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame x:Name="KreativnostCard" CornerRadius="10" Padding="10" BackgroundColor="LightGray" Grid.Column="2">
+                    <StackLayout>
+                        <Label Text="Kreativnost" FontSize="Medium" HorizontalOptions="Center" />
+                        <Image Source="creativity.png" WidthRequest="100" HeightRequest="100" Aspect="AspectFill" />
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCardTapped" CommandParameter="Kreativnost" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+
+            <!-- ListView to display Firestore data -->
+            <ListView x:Name="RezervacijeListView" Grid.Row="1" ItemsSource="{Binding RezervacijeList}" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="10">
-                                <!-- Labels to display Firestore data for each item -->
-                                <Label Text="{Binding Naziv}" FontSize="Large" />
-                                <Image Source="{Binding Slika}" Width="200" Height="200" />
-
-                                <Label Text="{Binding Grupa}" FontSize="Large" />
-                            </StackLayout>
+                            <Frame CornerRadius="10" Padding="10" Margin="10" BackgroundColor="LightGray">
+                                <StackLayout>
+                                    <Label Text="{Binding Naziv}" FontSize="Large" HorizontalOptions="Center" />
+                                    <Image Source="{Binding Slika}" WidthRequest="200" HeightRequest="200" Aspect="AspectFill" />
+                                    <Label Text="{Binding Grupa}" FontSize="Large" HorizontalOptions="Center" />
+                                    <Button Text="{Binding ButtonText}" Clicked="RezervisiButton_Clicked" CommandParameter="{Binding Naziv}" HorizontalOptions="CenterAndExpand" />
+                                </StackLayout>
+                            </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
             <!-- Example for a Button to trigger loading of data -->
-            <Button Text="Load Rezervacije" Clicked="LoadRezervacijeButton_Clicked" />
-
-        </StackLayout>
-
-    </StackLayout>
+            <Button Grid.Row="2" Text="Load Rezervacije" Clicked="LoadRezervacijeButton_Clicked" HorizontalOptions="Center" />
+        </Grid>
     </ScrollView>
 
 </ContentPage>

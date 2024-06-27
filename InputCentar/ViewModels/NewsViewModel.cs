@@ -24,7 +24,7 @@ namespace InputCentar.ViewModels
 
         public NewsViewModel()
         {
-            System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "C:\\Users\\STEM8\\source\\repos\\InputCentar\\InputCentar\\Platforms\\Android\\google-services\\inputapp-870db-firebase-adminsdk-3axmc-fcd0e0d53f.json");
+            System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "C:\\Users\\USER\\Source\\Repos\\InputCentar\\InputCentar\\Platforms\\Android\\google-services\\inputapp-870db-firebase-adminsdk-3axmc-fcd0e0d53f.json");
 
             _firestoreDb = FirestoreDb.Create("inputapp-870db");
 

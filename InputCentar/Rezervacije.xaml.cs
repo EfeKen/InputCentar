@@ -1,8 +1,8 @@
 using Google.Cloud.Firestore;
 using Microsoft.Maui.Controls;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace InputCentar
@@ -50,10 +50,38 @@ namespace InputCentar
             }
         }
 
-        // Call this method to load Rezervacije from Firestore
         private async void LoadRezervacijeButton_Clicked(object sender, EventArgs e)
         {
             await LoadRezervacijeFromFirestore();
+        }
+
+        private void OnCardTapped(object sender, EventArgs e)
+        {
+            var category = (sender as Frame)?.BindingContext as string;
+            if (!string.IsNullOrEmpty(category))
+            {
+                SortByCategory(category);
+            }
+        }
+
+        private void SortByCategory(string category)
+        {
+            var sortedList = RezervacijeList.Where(r => r.Grupa == category).ToList();
+            RezervacijeList.Clear();
+            foreach (var item in sortedList)
+            {
+                RezervacijeList.Add(item);
+            }
+        }
+
+        private async void RezervisiButton_Clicked(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            if (button != null && button.CommandParameter is string naziv)
+            {
+                // Navigate to Kalendar page, passing the selected item data
+                await Navigation.PushAsync(new Kalendar()); // Adjust KalendarPage constructor as per your requirement
+            }
         }
     }
 
@@ -62,5 +90,6 @@ namespace InputCentar
         public string Naziv { get; set; }
         public string Slika { get; set; }
         public string Grupa { get; set; }
+        public string ButtonText { get; } = "Rezervisi"; // Button text
     }
 }

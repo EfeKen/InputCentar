@@ -4,9 +4,9 @@ namespace InputCentar;
 
 public partial class ProfilPage : ContentPage
 {
-	public ProfilPage()
-	{
-		InitializeComponent();
+    public ProfilPage()
+    {
+        InitializeComponent();
 
     }
 }

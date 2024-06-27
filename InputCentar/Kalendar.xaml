@@ -25,6 +25,14 @@
             <Setter Property="HeightRequest" Value="40" />
         </Style>
 
+        <!-- Define a style for text entries -->
+        <Style TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
+            <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+            <Setter Property="Margin" Value="0,0,0,10" />
+            <Setter Property="HeightRequest" Value="40" />
+        </Style>
+
         <!-- Define a style for the button -->
         <Style TargetType="Button">
             <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
@@ -43,7 +51,13 @@
             <DatePicker x:Name="startDatePicker" DateSelected="StartDateSelected" HorizontalOptions="CenterAndExpand" />
             <Label Text="Odaberite datum završetka" />
             <DatePicker x:Name="endDatePicker" DateSelected="EndDateSelected" HorizontalOptions="CenterAndExpand" />
-            <Button Text="Rezerviraj" Clicked="MakeReservationClicked" />
+            
+            <Entry x:Name="imeEntry" Placeholder="Unesite ime" />
+           
+            <Entry x:Name="prezimeEntry" Placeholder="Unesite prezime" />
+            
+            <Entry x:Name="brojMobitelaEntry" Placeholder="Unesite broj mobitela" />
+            <Button Text="Rezervisi" Clicked="MakeReservationClicked" />
         </StackLayout>
     </ContentPage.Content>
 

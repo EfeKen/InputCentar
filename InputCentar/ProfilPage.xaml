@@ -3,9 +3,9 @@
              x:Class="InputCentar.ProfilPage"
              xmlns:viewModels="clr-namespace:InputCentar.ViewModels">
 
-   
+
     <StackLayout Padding="10">
         <Label Text="Users" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
-        
+
     </StackLayout>
 </ContentPage>
